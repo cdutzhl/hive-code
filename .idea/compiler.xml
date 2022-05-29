@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="miccloud-api" />
+        <module name="miccloud-consumer-feign" />
+        <module name="miccloud-eureka" />
+        <module name="miccloud-eureka (1)" />
+        <module name="miccloud-eureka (2)" />
+        <module name="miccloud-eureka2" />
+        <module name="miccloud-eureka3" />
+        <module name="miccloud-hystrix-dashboard" />
+        <module name="miccloud-provider-product (1)" />
+        <module name="miccloud-provider-product1" />
+        <module name="miccloud-provider-product2" />
+        <module name="miccloud-provider-product2 (1)" />
+        <module name="miccloud-provider-product3" />
+        <module name="miccloud-security" />
+        <module name="miccloud-service" />
+        <module name="miccloudapi" />
+        <module name="miccloudconsumer" />
+        <module name="miccloudproviderprodect" />
+        <module name="miccloudproviderproduct" />
+      </profile>
+      <profile name="Annotation profile for elecontract" enabled="true">
+        <sourceOutputDir name="../miccloud-consumer/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../miccloud-consumer/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="miccloud-consumer (1)" />
+      </profile>
+      <profile name="Annotation profile for miccloud-consumer" enabled="true">
+        <sourceOutputDir name="../miccloud-consumer-feign/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../miccloud-consumer-feign/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="miccloud-consumer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="elecontract" target="1.8" />
+      <module name="miccloud-api" target="1.8" />
+      <module name="miccloud-consumer" target="1.8" />
+      <module name="miccloud-consumer (1)" target="1.8" />
+      <module name="miccloud-consumer-feign" target="1.8" />
+      <module name="miccloud-eureka" target="1.8" />
+      <module name="miccloud-eureka (1)" target="1.8" />
+      <module name="miccloud-eureka (2)" target="1.8" />
+      <module name="miccloud-eureka2" target="1.8" />
+      <module name="miccloud-eureka3" target="1.8" />
+      <module name="miccloud-hystrix-dashboard" target="1.8" />
+      <module name="miccloud-provider-product" target="1.8" />
+      <module name="miccloud-provider-product (1)" target="1.8" />
+      <module name="miccloud-provider-product (2)" target="1.8" />
+      <module name="miccloud-provider-product1" target="1.8" />
+      <module name="miccloud-provider-product2" target="1.8" />
+      <module name="miccloud-provider-product2 (1)" target="1.8" />
+      <module name="miccloud-provider-product3" target="1.8" />
+      <module name="miccloud-security" target="1.8" />
+      <module name="miccloud-service" target="1.8" />
+      <module name="miccloudapi" target="1.8" />
+      <module name="miccloudconsumer" target="1.8" />
+      <module name="miccloudproviderprodect" target="1.8" />
+      <module name="miccloudproviderproduct" target="1.8" />
+      <module name="miccloudsecurity" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
