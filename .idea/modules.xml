@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/elecontract.iml" filepath="$PROJECT_DIR$/elecontract.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-api/miccloud-api.iml" filepath="$PROJECT_DIR$/miccloud-api/miccloud-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-consumer/miccloud-consumer.iml" filepath="$PROJECT_DIR$/miccloud-consumer/miccloud-consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-consumer-feign/miccloud-consumer-feign.iml" filepath="$PROJECT_DIR$/miccloud-consumer-feign/miccloud-consumer-feign.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-eureka/miccloud-eureka.iml" filepath="$PROJECT_DIR$/miccloud-eureka/miccloud-eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-eureka2/miccloud-eureka2.iml" filepath="$PROJECT_DIR$/miccloud-eureka2/miccloud-eureka2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-eureka3/miccloud-eureka3.iml" filepath="$PROJECT_DIR$/miccloud-eureka3/miccloud-eureka3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-hystrix-dashboard/miccloud-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/miccloud-hystrix-dashboard/miccloud-hystrix-dashboard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-provider-product1/miccloud-provider-product1.iml" filepath="$PROJECT_DIR$/miccloud-provider-product1/miccloud-provider-product1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-provider-product2/miccloud-provider-product2.iml" filepath="$PROJECT_DIR$/miccloud-provider-product2/miccloud-provider-product2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-provider-product3/miccloud-provider-product3.iml" filepath="$PROJECT_DIR$/miccloud-provider-product3/miccloud-provider-product3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-security/miccloud-security.iml" filepath="$PROJECT_DIR$/miccloud-security/miccloud-security.iml" />
-      <module fileurl="file://$PROJECT_DIR$/miccloud-service/miccloud-service.iml" filepath="$PROJECT_DIR$/miccloud-service/miccloud-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-api/base-api.iml" filepath="$PROJECT_DIR$/base-api/base-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/codehive.iml" filepath="$PROJECT_DIR$/codehive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hiver/hiver.iml" filepath="$PROJECT_DIR$/hiver/hiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sleuth/sleuth.iml" filepath="$PROJECT_DIR$/sleuth/sleuth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>
   </component>
 </project>
