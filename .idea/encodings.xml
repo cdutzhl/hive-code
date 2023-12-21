@@ -3,15 +3,33 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/base-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/builders/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/builders/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hiver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hiver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hiver/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hystrix-dashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-dashboard/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-dashboard/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sleuth" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sso-center" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sleuth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sleuth/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/turbine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/turbine/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/turbine/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul/src/main/resources" charset="UTF-8" />
   </component>
 </project>

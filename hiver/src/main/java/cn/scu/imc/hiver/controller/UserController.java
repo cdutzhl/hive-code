@@ -14,7 +14,7 @@ public class UserController {
 
 
     @Resource
-    private IUserService  userService;
+    private IUserService userService;
 
 
     @GetMapping(value = "/get/{id}")

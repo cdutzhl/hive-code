@@ -13,7 +13,7 @@ import java.util.Optional;
 public class ClientNodeServiceImpl implements IClientNodeService {
 
     @Resource
-    private ClinetNodeRepository  clinetNodeRepository;
+    private ClinetNodeRepository clinetNodeRepository;
 
 
     @Override

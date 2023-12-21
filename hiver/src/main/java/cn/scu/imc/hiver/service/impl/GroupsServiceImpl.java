@@ -2,9 +2,9 @@ package cn.scu.imc.hiver.service.impl;
 
 import cn.scu.imc.api.vo.GroupUser;
 import cn.scu.imc.api.vo.Groups;
-import cn.scu.imc.hiver.repository.GroupRepository;
 import cn.scu.imc.hiver.repository.GroupUserRepository;
 import cn.scu.imc.hiver.service.IGroupsService;
+import cn.scu.imc.hiver.repository.GroupRepository;
 import cn.scu.imc.hiver.utils.HiveUtil;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
 package cn.scu.imc.hiver.service.impl;
 
 import cn.scu.imc.api.vo.User;
-import cn.scu.imc.hiver.repository.UserRepository;
 import cn.scu.imc.hiver.service.IUserService;
+import cn.scu.imc.hiver.repository.UserRepository;
 import cn.scu.imc.hiver.utils.JbcryptUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

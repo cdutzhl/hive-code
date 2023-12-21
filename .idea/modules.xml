@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/base-api/base-api.iml" filepath="$PROJECT_DIR$/base-api/base-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/builders/builders.iml" filepath="$PROJECT_DIR$/builders/builders.iml" />
       <module fileurl="file://$PROJECT_DIR$/codehive.iml" filepath="$PROJECT_DIR$/codehive.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/hiver/hiver.iml" filepath="$PROJECT_DIR$/hiver/hiver.iml" />
