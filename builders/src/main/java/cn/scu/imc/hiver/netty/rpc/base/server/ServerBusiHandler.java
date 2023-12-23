@@ -4,8 +4,6 @@ import cn.scu.imc.api.vo.netty.Command;
 import cn.scu.imc.api.vo.netty.Message;
 import cn.scu.imc.api.vo.netty.MessageHeader;
 import cn.scu.imc.api.vo.netty.MessageType;
-import cn.scu.imc.hiver.netty.rpc.base.RegisterService;
-import cn.scu.imc.hiver.serivce.LocalService;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -13,14 +11,12 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.internal.StringUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.Arrays;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 类说明：业务处理类
@@ -34,18 +30,8 @@ public class ServerBusiHandler
     private static final Log LOG = LogFactory.getLog(ServerBusiHandler.class);
 
 
-
-
-    @Autowired
-    private RegisterService registerService;
-    @Autowired
-    private LocalService localService;
-    @Autowired
-    private ThreadPoolExecutor taskExecutor;
-
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Message msg)
-            throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, Message msg) {
         LOG.info(msg);
         Command command = (Command) msg.getBody();
         if (StringUtil.isNullOrEmpty(command.getCommands())) {

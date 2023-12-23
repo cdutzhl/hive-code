@@ -6,6 +6,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.codec.LengthFieldPrepender;
+import io.netty.handler.ssl.SslContext;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,13 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
 
     @Autowired
     private ClientBusiHandler clientBusiHandler;
+    @Autowired
+    private SslContext sslContext;
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
+        // 添加SSL安装验证
+        ch.pipeline().addLast(sslContext.newHandler(ch.alloc()));
         /*剥离接收到的消息的长度字段，拿到实际的消息报文的字节数组*/
         ch.pipeline().addLast("frameDecoder",
                 new LengthFieldBasedFrameDecoder(65535,
