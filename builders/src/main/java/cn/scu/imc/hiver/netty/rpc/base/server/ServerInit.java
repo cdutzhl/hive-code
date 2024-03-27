@@ -18,9 +18,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ServerInit extends ChannelInitializer<SocketChannel> {
-
     @Autowired
     private ServerBusiHandler serverBusiHandler;
+    @Autowired
+    private FileServerHandler fileServerHandler;
     @Autowired
     private SslContext sslContext;
 
@@ -29,7 +30,7 @@ public class ServerInit extends ChannelInitializer<SocketChannel> {
     }
 
     @Override
-    protected void initChannel(SocketChannel ch) {
+    protected void initChannel(SocketChannel ch){
         // 添加SSL安装验证
         ch.pipeline().addLast(sslContext.newHandler(ch.alloc()));
         /*Netty提供的日志打印Handler，可以展示发送接收出去的字节*/
@@ -54,11 +55,13 @@ public class ServerInit extends ChannelInitializer<SocketChannel> {
         ch.pipeline().addLast(new LoginAuthRespHandler());
 
         /*心跳应答*/
-        ch.pipeline().addLast("HeartBeatHandler",
-                new HeartBeatRespHandler());
+        ch.pipeline().addLast("HeartBeatHandler", new HeartBeatRespHandler());
 
-        /*服务端业务处理*/
-        ch.pipeline().addLast("ServerBusiHandler",
-                serverBusiHandler);
+        /*文件传输*/
+        ch.pipeline().addLast("FileServerHandler", fileServerHandler);
+
+        /*服务端命令处理
+        * */
+        ch.pipeline().addLast("ServerBusiHandler", serverBusiHandler);
     }
 }

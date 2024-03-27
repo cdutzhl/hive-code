@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.base.server;
 
-import cn.scu.imc.api.vo.netty.Command;
-import cn.scu.imc.api.vo.netty.Message;
-import cn.scu.imc.api.vo.netty.MessageHeader;
-import cn.scu.imc.api.vo.netty.MessageType;
+import cn.scu.imc.hiver.vo.netty.Command;
+import cn.scu.imc.hiver.vo.netty.Message;
+import cn.scu.imc.hiver.vo.netty.MessageHeader;
+import cn.scu.imc.hiver.vo.netty.MessageType;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -33,41 +33,44 @@ public class ServerBusiHandler
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Message msg) {
         LOG.info(msg);
-        Command command = (Command) msg.getBody();
-        if (StringUtil.isNullOrEmpty(command.getCommands())) {
-            Message message = getResponseMsg(msg, "No command need to exec!");
-            ctx.writeAndFlush(message);;
-        } else {
-            Arrays.stream(command.getCommands().split(";")).forEach(commandStr -> {
-                try {
-                    Runtime runtime = Runtime.getRuntime();
-                    Process process = runtime.exec(commandStr);
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("GBK")));
-                    StringBuilder builder = new StringBuilder();
-                    String line;
-                    while ((line = reader.readLine()) != null){
-                       // builder.append(line).append("\n");
-                        Message message = getResponseMsg(msg, line + "\n");
-                        ctx.writeAndFlush(message).addListener((ChannelFutureListener) future -> {
-                            if(!future.isSuccess()) {
-                                future.cause().printStackTrace();
-                            }
-                        });
-                    }
-                    Message message = getResponseMsg(msg, builder.toString());
-                    ctx.writeAndFlush(message).addListener((ChannelFutureListener) future -> {
-                        if(!future.isSuccess()) {
-                            future.cause().printStackTrace();
+        if (msg.getMessageHeader() != null && msg.getMessageHeader().getType() == MessageType.SERVICE_REQ.value()) {
+            Command command = (Command) msg.getBody();
+            if (StringUtil.isNullOrEmpty(command.getCommands())) {
+                Message message = getResponseMsg(msg, "No command need to exec!");
+                ctx.writeAndFlush(message);;
+            } else {
+                Arrays.stream(command.getCommands().split(";")).forEach(commandStr -> {
+                    try {
+                        Runtime runtime = Runtime.getRuntime();
+                        Process process = runtime.exec(commandStr);
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("GBK")));
+                        String line;
+                        while ((line = reader.readLine()) != null){
+                            Message message = getResponseMsg(msg, line + "\n");
+                            ctx.writeAndFlush(message).addListener((ChannelFutureListener) future -> {
+                                if(!future.isSuccess()) {
+                                    future.cause().printStackTrace();
+                                }
+                            });
                         }
-                    });
-                    reader.close();
-                } catch (Exception e) {
-                    Message message = getResponseMsg(msg, "Exec command: " + commandStr + " error: " + e.getMessage());
-                    ctx.writeAndFlush(message);;
-                }
-            } );
+                        reader.close();
+                    } catch (Exception e) {
+                        Message message = getResponseMsg(msg, "Exec command: " + commandStr + " error: " + e.getMessage());
+                        ctx.writeAndFlush(message);
+                    }
+                } );
+                Message lastMessage = getResponseMsg(msg, "客户端信息发送完毕！");
+                MessageHeader messageHeader = lastMessage.getMessageHeader();
+                messageHeader.setLastMessage(true);
+                ctx.writeAndFlush(lastMessage);
+            }
+        } else {
+            ctx.fireChannelRead(msg);
         }
+
     }
+
+
 
     private Message getResponseMsg(Message msg, String logLine) {
         Message message = new Message();

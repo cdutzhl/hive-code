@@ -14,7 +14,6 @@
         <module name="eureka" />
         <module name="hiver" />
         <module name="zuul" />
-        <module name="base-api" />
         <module name="security" />
         <module name="miccloud-provider-user" />
         <module name="service" />

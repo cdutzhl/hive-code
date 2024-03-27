@@ -1,6 +1,8 @@
 package cn.scu.imc.user.mapper;
 
-import cn.scu.imc.api.vo.User;
+
+
+import cn.scu.imc.user.vo.User;
 
 import java.util.List;
 

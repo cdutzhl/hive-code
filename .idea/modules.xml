@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/base-api/base-api.iml" filepath="$PROJECT_DIR$/base-api/base-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/builders/builders.iml" filepath="$PROJECT_DIR$/builders/builders.iml" />
-      <module fileurl="file://$PROJECT_DIR$/codehive.iml" filepath="$PROJECT_DIR$/codehive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hiver/hiver.iml" filepath="$PROJECT_DIR$/hiver/hiver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
-      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sleuth/sleuth.iml" filepath="$PROJECT_DIR$/sleuth/sleuth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/builders/builders.iml" filepath="$PROJECT_DIR$/builders/builders.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/codehive.iml" filepath="$PROJECT_DIR$/codehive.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/hiver/hiver.iml" filepath="$PROJECT_DIR$/hiver/hiver.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/sleuth/sleuth.iml" filepath="$PROJECT_DIR$/sleuth/sleuth.iml" group="codehive and modules" />
+      <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" group="codehive and modules" />
       <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" group="codehive and modules" />
     </modules>
   </component>
 </project>

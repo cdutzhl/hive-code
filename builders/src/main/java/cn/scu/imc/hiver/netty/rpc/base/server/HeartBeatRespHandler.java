@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.base.server;
 
 
-import cn.scu.imc.api.vo.netty.Message;
-import cn.scu.imc.api.vo.netty.MessageHeader;
-import cn.scu.imc.api.vo.netty.MessageType;
+import cn.scu.imc.hiver.vo.netty.Message;
+import cn.scu.imc.hiver.vo.netty.MessageHeader;
+import cn.scu.imc.hiver.vo.netty.MessageType;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
@@ -36,7 +36,7 @@ public class HeartBeatRespHandler extends ChannelInboundHandlerAdapter {
 
     private Message buildHeatBeat() {
 		Message message = new Message();
-		MessageHeader  header = new MessageHeader();
+		MessageHeader header = new MessageHeader();
 		header.setType(MessageType.HEARTBEAT_RESP.value());
 		message.setMessageHeader(header);
 		return message;

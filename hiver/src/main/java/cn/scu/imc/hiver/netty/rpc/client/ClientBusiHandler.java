@@ -1,8 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
-import cn.scu.imc.api.vo.netty.Message;
-import cn.scu.imc.api.vo.netty.MessageHeader;
-import cn.scu.imc.api.vo.netty.MessageType;
+
+import cn.scu.imc.hiver.bo.vo.Message;
+import cn.scu.imc.hiver.bo.vo.MessageHeader;
+import cn.scu.imc.hiver.bo.vo.MessageType;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -27,8 +28,7 @@ public class ClientBusiHandler extends SimpleChannelInboundHandler<Message> {
 
     private static final Log LOG = LogFactory.getLog(ClientBusiHandler.class);
     private ChannelHandlerContext ctx;
-    private final ConcurrentHashMap<Long, BlockingQueue<Object>> responseMap
-            = new ConcurrentHashMap<Long, BlockingQueue<Object>>();
+    private final ConcurrentHashMap<Long, BlockingQueue<Object>> responseMap = new ConcurrentHashMap<Long, BlockingQueue<Object>>();
 
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
@@ -40,12 +40,16 @@ public class ClientBusiHandler extends SimpleChannelInboundHandler<Message> {
     protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
         LOG.info("Server: " + msg);
         if (msg.getMessageHeader() != null
-                && msg.getMessageHeader().getType() == MessageType.SERVICE_RESP
-                .value()) {
+                && msg.getMessageHeader().getType() == MessageType.SERVICE_RESP.value()) {
             long sessionId = msg.getMessageHeader().getSessionID();
             Object result = msg.getBody();
-            BlockingQueue<Object> msgQueue = responseMap.get(sessionId);
-            msgQueue.put(result);
+            if (msg.getMessageHeader().isLastMessage()) {
+                BlockingQueue<Object> msgQueue = responseMap.get(sessionId);
+                msgQueue.put(result);
+            }
+
+        } else{
+            ctx.fireChannelRead(msg);
         }
     }
 

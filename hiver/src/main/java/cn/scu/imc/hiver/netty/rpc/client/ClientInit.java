@@ -21,7 +21,10 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
     @Autowired
     private ClientBusiHandler clientBusiHandler;
     @Autowired
+    private FileClientHandler fileClientHandler;
+    @Autowired
     private SslContext sslContext;
+
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
@@ -40,23 +43,21 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
         /*反序列化，将字节数组转换为消息实体*/
         ch.pipeline().addLast(new KryoDecoder());
         /*序列化，将消息实体转换为字节数组准备进行网络传输*/
-        ch.pipeline().addLast("MessageEncoder",
-                new KryoEncoder());
+        ch.pipeline().addLast("MessageEncoder", new KryoEncoder());
 
         /*超时检测*/
-        ch.pipeline().addLast("readTimeoutHandler",
-                new ReadTimeoutHandler(10));
+        ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(100));
 
         /*发出登录请求*/
-        ch.pipeline().addLast("LoginAuthHandler",
-                new LoginAuthReqHandler());
+        ch.pipeline().addLast("LoginAuthHandler", new LoginAuthReqHandler());
 
         /*发出心跳请求*/
-        ch.pipeline().addLast("HeartBeatHandler",
-                new HeartBeatReqHandler());
+        ch.pipeline().addLast("HeartBeatHandler", new HeartBeatReqHandler());
+
+        /*文件传输*/
+        ch.pipeline().addLast("FileClientHandler", fileClientHandler);
 
         /*业务处理*/
-        ch.pipeline().addLast("ClientBusiHandler",
-                clientBusiHandler);
+//        ch.pipeline().addLast("ClientBusiHandler", clientBusiHandler);
     }
 }

@@ -1,8 +1,8 @@
 package cn.scu.imc.hiver.netty.rpc.base.server;
 
-import cn.scu.imc.api.vo.netty.Message;
-import cn.scu.imc.api.vo.netty.MessageHeader;
-import cn.scu.imc.api.vo.netty.MessageType;
+import cn.scu.imc.hiver.vo.netty.Message;
+import cn.scu.imc.hiver.vo.netty.MessageHeader;
+import cn.scu.imc.hiver.vo.netty.MessageType;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
@@ -27,10 +27,9 @@ public class LoginAuthRespHandler extends ChannelInboundHandlerAdapter {
     //用户登录的白名单
     private String[] whitekList = { "127.0.0.1"};
 
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
-	    throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg){
 		Message message = (Message) msg;
-
+	//	LOG.info(message);
 		// 如果是握手请求消息，处理，其它消息透传
 		if (message.getMessageHeader() != null
 			&& message.getMessageHeader().getType() == MessageType.LOGIN_REQ

@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hiver</artifactId>
+    <version>1.0.0</version>
+
     <dependencies>
         <dependency>
             <groupId>io.springfox</groupId>
@@ -154,6 +156,11 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.28.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.scu.imc</groupId>
+            <artifactId>base-api</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <!--<dependency>-->

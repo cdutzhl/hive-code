@@ -1,7 +1,8 @@
 package cn.scu.imc.user.controller;
 
-import cn.scu.imc.api.vo.User;
+
 import cn.scu.imc.user.service.IUserService;
+import cn.scu.imc.user.vo.User;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
