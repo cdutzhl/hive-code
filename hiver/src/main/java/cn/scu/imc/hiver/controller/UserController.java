@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.api.vo.User;
+
+import cn.scu.imc.hiver.bo.User;
 import cn.scu.imc.hiver.service.IUserService;
 import org.springframework.web.bind.annotation.*;
 

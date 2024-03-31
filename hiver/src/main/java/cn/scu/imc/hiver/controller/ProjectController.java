@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.api.vo.Project;
+
+import cn.scu.imc.hiver.bo.Project;
 import cn.scu.imc.hiver.service.IProjectService;
 import org.springframework.web.bind.annotation.*;
 

@@ -158,9 +158,9 @@
             <version>4.1.28.Final</version>
         </dependency>
         <dependency>
-            <groupId>cn.scu.imc</groupId>
-            <artifactId>base-api</artifactId>
-            <version>1.0.0</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.66</version>
         </dependency>
 
         <!--<dependency>-->

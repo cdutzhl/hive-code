@@ -1,10 +1,11 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.api.vo.User;
+
 import cn.scu.imc.hiver.bo.LoginRequest;
+import cn.scu.imc.hiver.bo.User;
 import cn.scu.imc.hiver.service.IUserService;
-import cn.scu.imc.hiver.utils.JbcryptUtil;
 import cn.scu.imc.hiver.utils.HiveUtil;
+import cn.scu.imc.hiver.utils.JbcryptUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service;
 
-import cn.scu.imc.api.vo.Pipeline;
+
+import cn.scu.imc.hiver.bo.Pipeline;
 
 public interface IPipelineService {
 

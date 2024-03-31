@@ -10,34 +10,34 @@
         <module name="turbine" />
         <module name="product" />
         <module name="builders" />
-        <module name="sleuth" />
-        <module name="eureka" />
-        <module name="hiver" />
-        <module name="zuul" />
         <module name="security" />
+        <module name="sleuth" />
         <module name="miccloud-provider-user" />
+        <module name="eureka" />
         <module name="service" />
         <module name="hystrix-dashboard" />
+        <module name="hiver" />
+        <module name="zuul" />
         <module name="user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="base-api" target="1.8" />
-      <module name="builders" target="1.8" />
+      <module name="builders" target="1.5" />
       <module name="codehive" target="1.8" />
-      <module name="eureka" target="1.8" />
+      <module name="eureka" target="1.5" />
       <module name="hiver" target="1.8" />
-      <module name="hystrix-dashboard" target="1.8" />
+      <module name="hystrix-dashboard" target="1.5" />
       <module name="miccloud-provider-user" target="1.8" />
       <module name="mozi" target="1.8" />
       <module name="product" target="1.8" />
-      <module name="security" target="1.8" />
-      <module name="service" target="1.8" />
-      <module name="sleuth" target="1.8" />
+      <module name="security" target="1.5" />
+      <module name="service" target="1.5" />
+      <module name="sleuth" target="1.5" />
       <module name="sso-center" target="1.8" />
-      <module name="turbine" target="1.8" />
-      <module name="user" target="1.8" />
-      <module name="zuul" target="1.8" />
+      <module name="turbine" target="1.5" />
+      <module name="user" target="1.5" />
+      <module name="zuul" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

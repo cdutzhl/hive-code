@@ -1,6 +1,6 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.api.vo.Pipeline;
+import cn.scu.imc.hiver.bo.Pipeline;
 import cn.scu.imc.hiver.service.IPipelineService;
 import org.springframework.web.bind.annotation.*;
 

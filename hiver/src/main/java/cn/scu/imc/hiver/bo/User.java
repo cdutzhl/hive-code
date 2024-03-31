@@ -1,5 +1,6 @@
 package cn.scu.imc.hiver.bo;
 
+
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;

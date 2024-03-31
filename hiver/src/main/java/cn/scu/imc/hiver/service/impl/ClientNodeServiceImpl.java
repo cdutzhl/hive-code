@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service.impl;
 
-import cn.scu.imc.api.vo.ClientNode;
+
+import cn.scu.imc.hiver.bo.ClientNode;
 import cn.scu.imc.hiver.repository.ClinetNodeRepository;
 import cn.scu.imc.hiver.service.IClientNodeService;
 import org.springframework.stereotype.Service;

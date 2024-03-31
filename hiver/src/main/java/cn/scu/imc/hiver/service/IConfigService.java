@@ -1,6 +1,8 @@
 package cn.scu.imc.hiver.service;
 
-import cn.scu.imc.api.vo.Config;
+
+
+import cn.scu.imc.hiver.bo.Config;
 
 import java.util.List;
 

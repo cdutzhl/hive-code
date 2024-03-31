@@ -1,6 +1,6 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.api.vo.Config;
+import cn.scu.imc.hiver.bo.Config;
 import cn.scu.imc.hiver.service.IConfigService;
 import org.springframework.web.bind.annotation.*;
 

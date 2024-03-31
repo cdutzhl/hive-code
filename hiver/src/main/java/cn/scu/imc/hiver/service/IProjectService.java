@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service;
 
-import cn.scu.imc.api.vo.Project;
+
+import cn.scu.imc.hiver.bo.Project;
 
 import java.util.List;
 

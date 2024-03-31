@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.api.vo.ClientNode;
+
+import cn.scu.imc.hiver.bo.ClientNode;
 import cn.scu.imc.hiver.service.IClientNodeService;
 import org.springframework.web.bind.annotation.*;
 

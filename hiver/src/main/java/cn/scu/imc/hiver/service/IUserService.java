@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service;
 
-import cn.scu.imc.api.vo.User;
+
+import cn.scu.imc.hiver.bo.User;
 
 import java.util.List;
 

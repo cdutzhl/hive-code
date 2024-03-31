@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service;
 
-import cn.scu.imc.api.vo.ClientNode;
+
+import cn.scu.imc.hiver.bo.ClientNode;
 
 import java.util.List;
 
