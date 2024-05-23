@@ -1,11 +1,12 @@
 package cn.scu.imc.hiver.service.impl;
 
-import cn.scu.imc.api.vo.GroupUser;
-import cn.scu.imc.api.vo.Groups;
-import cn.scu.imc.api.vo.Project;
+
+import cn.scu.imc.hiver.entity.GroupUser;
+import cn.scu.imc.hiver.entity.Groups;
+import cn.scu.imc.hiver.entity.Project;
+import cn.scu.imc.hiver.repository.GroupUserRepository;
 import cn.scu.imc.hiver.repository.ProjectRepository;
 import cn.scu.imc.hiver.service.IGroupsService;
-import cn.scu.imc.hiver.repository.GroupUserRepository;
 import cn.scu.imc.hiver.service.IProjectService;
 import cn.scu.imc.hiver.utils.HiveUtil;
 import org.springframework.stereotype.Service;

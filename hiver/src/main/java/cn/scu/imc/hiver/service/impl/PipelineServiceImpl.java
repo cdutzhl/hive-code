@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service.impl;
 
-import cn.scu.imc.api.vo.Pipeline;
+
+import cn.scu.imc.hiver.entity.Pipeline;
 import cn.scu.imc.hiver.repository.PipelineRepository;
 import cn.scu.imc.hiver.service.IPipelineService;
 import org.springframework.stereotype.Service;

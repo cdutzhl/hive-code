@@ -2,7 +2,7 @@ package cn.scu.imc.hiver.service;
 
 
 
-import cn.scu.imc.hiver.bo.Config;
+import cn.scu.imc.hiver.entity.Config;
 
 import java.util.List;
 

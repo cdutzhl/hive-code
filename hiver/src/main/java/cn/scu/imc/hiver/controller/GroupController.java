@@ -1,6 +1,6 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.hiver.bo.Groups;
+import cn.scu.imc.hiver.entity.Groups;
 import cn.scu.imc.hiver.service.IGroupsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/group")
+@RequestMapping("/api/group")
 public class GroupController {
 
 

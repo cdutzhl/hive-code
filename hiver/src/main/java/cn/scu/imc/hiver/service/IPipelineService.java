@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.service;
 
 
-import cn.scu.imc.hiver.bo.Pipeline;
+import cn.scu.imc.hiver.entity.Pipeline;
 
 public interface IPipelineService {
 

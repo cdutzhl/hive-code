@@ -1,7 +1,8 @@
 package cn.scu.imc.hiver.service;
 
 
-import cn.scu.imc.hiver.bo.User;
+import cn.scu.imc.hiver.bo.UserResponse;
+import cn.scu.imc.hiver.entity.User;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface IUserService {
 
      User getUserByUsername(String username);
 
-     List<User> findAll();
+     List<UserResponse> findAll();
 
      void update(User user);
 

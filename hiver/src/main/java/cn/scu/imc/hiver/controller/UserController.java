@@ -1,7 +1,8 @@
 package cn.scu.imc.hiver.controller;
 
 
-import cn.scu.imc.hiver.bo.User;
+import cn.scu.imc.hiver.bo.UserResponse;
+import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.service.IUserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
 
@@ -31,7 +32,7 @@ public class UserController {
 
 
     @GetMapping("/list")
-    public List<User> list(){
+    public List<UserResponse> list(){
         return userService.findAll();
     }
 

@@ -1,4 +1,4 @@
-package cn.scu.imc.hiver.bo;
+package cn.scu.imc.hiver.entity;
 
 
 import com.alibaba.fastjson.annotation.JSONField;
@@ -24,6 +24,8 @@ public class User  extends BaseEntity implements Serializable{
     @Column
     private String userName;
     @Column
+    private String email;
+    @Column
     @JSONField(serialize = false)
     private String password;
     //0:正常用户   1：用户被锁定  2：用户被删除
@@ -32,6 +34,8 @@ public class User  extends BaseEntity implements Serializable{
    //1:系统管理员  2：系统辅助管理员 0:普通用户
     @Column
     private Integer manager;
+
+
 
 
 }

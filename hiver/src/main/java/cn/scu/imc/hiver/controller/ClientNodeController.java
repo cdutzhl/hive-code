@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.controller;
 
 
-import cn.scu.imc.hiver.bo.ClientNode;
+import cn.scu.imc.hiver.entity.ClientNode;
 import cn.scu.imc.hiver.service.IClientNodeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/clientNode")
+@RequestMapping("/api/clientNode")
 public class ClientNodeController {
 
 

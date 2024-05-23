@@ -1,4 +1,4 @@
-package cn.scu.imc.hiver.bo;
+package cn.scu.imc.hiver.entity;
 
 import lombok.Data;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -16,7 +16,7 @@ public class Groups extends BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
+    @Column()
     private String projectName;
 
 

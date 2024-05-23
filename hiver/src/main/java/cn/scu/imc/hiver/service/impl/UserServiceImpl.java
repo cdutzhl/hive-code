@@ -1,8 +1,10 @@
 package cn.scu.imc.hiver.service.impl;
 
-import cn.scu.imc.api.vo.User;
-import cn.scu.imc.hiver.service.IUserService;
+
+import cn.scu.imc.hiver.bo.UserResponse;
+import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.repository.UserRepository;
+import cn.scu.imc.hiver.service.IUserService;
 import cn.scu.imc.hiver.utils.JbcryptUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -10,6 +12,7 @@ import org.springframework.util.StringUtils;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -49,9 +52,13 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public List<UserResponse> findAll() {
+        List<User> users = userRepository.findAll();
+        List<UserResponse> userResponse = users.stream()
+                .map(e -> new UserResponse(e.getId(), e.getUserName(), e.getEmail(), e.getManager())).collect(Collectors.toList());
+        return userResponse;
     }
+
 
     @Override
     public void update(User user) {

@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.service;
 
 
-import cn.scu.imc.hiver.bo.Groups;
+import cn.scu.imc.hiver.entity.Groups;
 
 import java.util.List;
 

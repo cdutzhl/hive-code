@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.config;
 
 
-import cn.scu.imc.hiver.bo.User;
+import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.utils.HiveUtil;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

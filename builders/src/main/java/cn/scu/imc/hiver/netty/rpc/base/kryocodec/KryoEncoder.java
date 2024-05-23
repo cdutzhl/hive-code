@@ -11,8 +11,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class KryoEncoder  extends MessageToByteEncoder<Message> {
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, Message message,
-                          ByteBuf out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, Message message, ByteBuf out) {
         KryoSerializer.serialize(message, out);
         ctx.flush();
     }

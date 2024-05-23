@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.repository;
 
 
-import cn.scu.imc.hiver.bo.ClientNode;
+import cn.scu.imc.hiver.entity.ClientNode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

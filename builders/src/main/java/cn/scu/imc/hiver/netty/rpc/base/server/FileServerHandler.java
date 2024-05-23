@@ -27,8 +27,7 @@ public class FileServerHandler extends SimpleChannelInboundHandler<Message> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
-        if (msg.getMessageHeader() != null
-                && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_UPLOAD_REQ.value()) {
+        if (msg.getMessageHeader() != null && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_UPLOAD_REQ.value()) {
             LOG.info(msg);
             LOG.info("客户端开始接收文件");
             FileUpload fileUpload = (FileUpload) msg.getBody();

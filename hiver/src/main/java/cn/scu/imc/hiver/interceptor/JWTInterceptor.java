@@ -2,7 +2,7 @@ package cn.scu.imc.hiver.interceptor;
 
 
 import cn.scu.imc.hiver.annotation.NoLoginAccess;
-import cn.scu.imc.hiver.bo.User;
+import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.service.IUserService;
 import cn.scu.imc.hiver.utils.HiveUtil;
 import com.auth0.jwt.JWT;

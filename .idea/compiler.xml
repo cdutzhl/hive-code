@@ -23,7 +23,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="base-api" target="1.8" />
-      <module name="builders" target="1.5" />
+      <module name="builders" target="1.8" />
       <module name="codehive" target="1.8" />
       <module name="eureka" target="1.5" />
       <module name="hiver" target="1.8" />

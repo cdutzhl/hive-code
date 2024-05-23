@@ -5,8 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+
+
+
 @EnableJpaAuditing
-@EntityScan(basePackages = "cn.scu.imc.api.vo")
+@EntityScan(basePackages = "cn.scu.imc.hiver.entity")
 @SpringBootApplication(scanBasePackages = "cn.scu.imc.hiver")
 //@EnableEurekaClient
 //@EnableDiscoveryClient

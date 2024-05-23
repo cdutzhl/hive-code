@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service.impl;
 
-import cn.scu.imc.api.vo.Config;
+
+import cn.scu.imc.hiver.entity.Config;
 import cn.scu.imc.hiver.repository.ConfigRepository;
 import cn.scu.imc.hiver.service.IConfigService;
 import org.springframework.stereotype.Service;

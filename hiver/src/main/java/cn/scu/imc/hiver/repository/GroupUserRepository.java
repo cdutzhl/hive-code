@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.repository;
 
 
-import cn.scu.imc.hiver.bo.GroupUser;
+import cn.scu.imc.hiver.entity.GroupUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

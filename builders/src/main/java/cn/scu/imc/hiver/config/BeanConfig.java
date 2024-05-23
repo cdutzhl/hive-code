@@ -9,17 +9,10 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.net.ssl.SSLException;
 import java.io.File;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class BeanConfig {
-    @Bean
-    public ThreadPoolExecutor taskExecutor(){
-        Integer maxThreads = Integer.valueOf(PropertiesUtils.getValueByKey("hive.netty.exectutor.max_threads") + "");
-        return new ThreadPoolExecutor(maxThreads, maxThreads, 0L, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
-    }
+
     @Bean
     public SslContext  sslContext() throws SSLException {
         String sslPath = String.valueOf(PropertiesUtils.getValueByKey("hive.netty.ssl.server"));

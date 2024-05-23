@@ -99,10 +99,12 @@ public class ClientFrame implements Runnable{
 
     @Override
     public void run() {
-        try {
-            connect(Integer.valueOf(PropertiesUtils.getValueByKey("hive.netty.port") + ""), PropertiesUtils.getValueByKey("hive.netty.host") + "");
-        } catch (Exception e) {
-            e.printStackTrace();
+        if ("OPEN".equals(PropertiesUtils.getValueByKey("hive.netty.start"))) {
+            try {
+                connect(Integer.valueOf(PropertiesUtils.getValueByKey("hive.netty.port") + ""), PropertiesUtils.getValueByKey("hive.netty.host") + "");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

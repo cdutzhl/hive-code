@@ -1,4 +1,4 @@
-package cn.scu.imc.hiver.bo;
+package cn.scu.imc.hiver.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

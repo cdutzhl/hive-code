@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.utils;
 
 import cn.hutool.core.date.DateUtil;
-import cn.scu.imc.hiver.bo.User;
+import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.service.IUserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
