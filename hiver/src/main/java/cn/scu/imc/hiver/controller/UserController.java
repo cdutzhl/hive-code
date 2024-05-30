@@ -1,13 +1,17 @@
 package cn.scu.imc.hiver.controller;
 
 
+import cn.hutool.http.HttpStatus;
+import cn.scu.imc.hiver.bo.UserRequestForm;
 import cn.scu.imc.hiver.bo.UserResponse;
 import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.service.IUserService;
+import cn.scu.imc.hiver.utils.Paging;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 
 @RestController
@@ -26,14 +30,16 @@ public class UserController {
 
 
     @PutMapping("/add")
-    public Object add(@RequestBody User user){
-        return userService.saveUser(user);
+    public Object add(@RequestBody @Validated UserRequestForm userRequestForm){
+        userService.saveUser(userRequestForm);
+        return ResponseEntity.status(HttpStatus.HTTP_OK);
     }
 
 
     @GetMapping("/list")
-    public List<UserResponse> list(){
-        return userService.findAll();
+    public Paging<UserResponse> list(@RequestParam(value = "pageIndex", defaultValue = "0") int pageIndex,
+                                                     @RequestParam(value = "pageSize", defaultValue = "10") int pageSize){
+        return userService.findAll(pageIndex,pageSize);
     }
 
 
@@ -44,9 +50,9 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable("id") Integer id){
+    public Object delete(@PathVariable("id") Integer id){
         userService.delete(id);
-        return true;
+        return ResponseEntity.status(HttpStatus.HTTP_OK);
     }
 
 
