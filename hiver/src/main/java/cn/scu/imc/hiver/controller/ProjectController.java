@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.controller;
 
 
+import cn.scu.imc.hiver.bo.ProjectVo;
 import cn.scu.imc.hiver.entity.Project;
 import cn.scu.imc.hiver.service.IProjectService;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class ProjectController {
 
 
     @PutMapping("/add")
-    public boolean add(@RequestBody Project project){
+    public boolean add(@RequestBody ProjectVo project){
         projectService.addProject(project);
         return true;
     }

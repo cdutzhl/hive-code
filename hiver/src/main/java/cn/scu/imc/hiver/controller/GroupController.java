@@ -1,6 +1,6 @@
 package cn.scu.imc.hiver.controller;
 
-import cn.scu.imc.hiver.entity.Groups;
+import cn.scu.imc.hiver.entity.Group;
 import cn.scu.imc.hiver.service.IGroupsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +18,8 @@ public class GroupController {
 
 
     @GetMapping(value = "/get/{id}")
-    public Groups getGroup(@PathVariable("id") Integer id){
-        Groups group = groupsService.getGroupById(id);
+    public Group getGroup(@PathVariable("id") Integer id){
+        Group group = groupsService.getGroupById(id);
         if(group == null){
             throw new RuntimeException(String.format("用户组:%d不存在", id));
         }
@@ -28,8 +28,9 @@ public class GroupController {
 
 
     @PutMapping("/add")
-    public boolean add(@RequestBody Groups groups){
-        return groupsService.addGroup(groups);
+    public boolean add(@RequestBody Group group){
+        groupsService.addGroup(group);
+        return true;
     }
 
 
@@ -55,14 +56,14 @@ public class GroupController {
 
 
     @GetMapping("/list")
-    public List<Groups> list(){
+    public List<Group> list(){
         return groupsService.listAll();
     }
 
 
     @PostMapping("/update")
-    public boolean update(@RequestBody Groups groups){
-        groupsService.update(groups);
+    public boolean update(@RequestBody Group group){
+        groupsService.update(group);
         return true;
     }
 

@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "groups")
+@Table(name = "group")
 @EntityListeners(AuditingEntityListener.class)
-public class Groups extends BaseEntity implements Serializable {
+public class Group extends BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +18,6 @@ public class Groups extends BaseEntity implements Serializable {
 
     @Column()
     private String projectName;
-
-
 
 
 }

@@ -2,7 +2,7 @@ package cn.scu.imc.hiver.service.impl;
 
 
 import cn.scu.imc.hiver.entity.GroupUser;
-import cn.scu.imc.hiver.entity.Groups;
+import cn.scu.imc.hiver.entity.Group;
 import cn.scu.imc.hiver.repository.GroupRepository;
 import cn.scu.imc.hiver.repository.GroupUserRepository;
 import cn.scu.imc.hiver.service.IGroupsService;
@@ -24,14 +24,13 @@ public class GroupsServiceImpl implements IGroupsService {
     private GroupUserRepository groupUserRepository;
 
     @Override
-    public boolean addGroup(Groups groups) {
-        groupRepository.save(groups);
-        return true;
+    public Group addGroup(Group group) {
+        return groupRepository.save(group);
     }
 
     @Override
-    public Groups getGroupById(Integer groupId) {
-        Optional<Groups> groupOpt = groupRepository.findById(groupId);
+    public Group getGroupById(Integer groupId) {
+        Optional<Group> groupOpt = groupRepository.findById(groupId);
         if (!groupOpt.isPresent()) {
             throw new RuntimeException("当前组不存在");
         }
@@ -40,13 +39,13 @@ public class GroupsServiceImpl implements IGroupsService {
     }
 
     @Override
-    public List<Groups> listAll() {
+    public List<Group> listAll() {
         return groupRepository.findAll();
     }
 
     @Override
-    public boolean update(Groups groups) {
-        groupRepository.save(groups);
+    public boolean update(Group group) {
+        groupRepository.save(group);
         return true;
     }
 

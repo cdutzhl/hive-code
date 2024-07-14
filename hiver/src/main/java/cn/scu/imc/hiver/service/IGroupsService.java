@@ -1,19 +1,19 @@
 package cn.scu.imc.hiver.service;
 
 
-import cn.scu.imc.hiver.entity.Groups;
+import cn.scu.imc.hiver.entity.Group;
 
 import java.util.List;
 
 public interface IGroupsService {
 
-     boolean addGroup(Groups groups);
+     Group addGroup(Group group);
 
-     Groups getGroupById(Integer groupId);
+     Group getGroupById(Integer groupId);
 
-     List<Groups> listAll();
+     List<Group> listAll();
 
-     boolean update(Groups groups);
+     boolean update(Group group);
 
      boolean addUserToGroup(Integer groupId, List<Integer> userIds);
 

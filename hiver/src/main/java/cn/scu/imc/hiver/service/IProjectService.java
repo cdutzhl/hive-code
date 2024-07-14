@@ -1,13 +1,14 @@
 package cn.scu.imc.hiver.service;
 
 
+import cn.scu.imc.hiver.bo.ProjectVo;
 import cn.scu.imc.hiver.entity.Project;
 
 import java.util.List;
 
 public interface IProjectService {
 
-     void addProject(Project project);
+     void addProject(ProjectVo project);
 
      Project getByProjectId(Integer id);
 
