@@ -1,7 +1,9 @@
 package cn.scu.imc.hiver.controller;
 
+import cn.scu.imc.hiver.bo.ConfigResponse;
 import cn.scu.imc.hiver.entity.Config;
 import cn.scu.imc.hiver.service.IConfigService;
+import cn.scu.imc.hiver.utils.Paging;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -29,9 +31,11 @@ public class ConfigController {
     }
 
 
+
     @GetMapping("/list")
-    public List<Config> list(){
-        return configService.listAll();
+    public Paging<ConfigResponse> list(@RequestParam(value = "pageIndex", defaultValue = "0") int pageIndex,
+                                     @RequestParam(value = "pageSize", defaultValue = "10") int pageSize){
+        return configService.findAll(pageIndex,pageSize);
     }
 
     @GetMapping("/listByConfigCode/{configCode}")

@@ -1,14 +1,19 @@
 package cn.scu.imc.hiver.service.impl;
 
 
+import cn.scu.imc.hiver.bo.ConfigResponse;
 import cn.scu.imc.hiver.entity.Config;
 import cn.scu.imc.hiver.repository.ConfigRepository;
 import cn.scu.imc.hiver.service.IConfigService;
+import cn.scu.imc.hiver.utils.Paging;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ConfigServiceImpl implements IConfigService {
@@ -50,5 +55,21 @@ public class ConfigServiceImpl implements IConfigService {
     @Override
     public void update(Config config) {
         configRepository.save(config);
+    }
+
+    @Override
+    public Paging<ConfigResponse> findAll(int page, int size) {
+        PageRequest pageRequest = PageRequest.of(page - 1, size);
+        Page configs = configRepository.findAll(pageRequest);
+        Paging<ConfigResponse> configPaging = new Paging<>();
+        configPaging.setTotal(configs.getTotalElements());
+        configPaging.setPageSize(size);
+        configPaging.setPageIndex(page);
+        List<Config> configList = configs.getContent();
+        List<ConfigResponse> configResponse = configList.stream()
+                .map(e -> new ConfigResponse(e.getId() ,e.getConfigCode(), e.getConfigValue(), e.getDescribeMsg(),
+                        e.getActive(), e.getLevel())).collect(Collectors.toList());
+        configPaging.setData(configResponse);
+        return configPaging;
     }
 }

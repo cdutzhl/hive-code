@@ -40,13 +40,13 @@ public class ProjectServiceImpl implements IProjectService {
         }
         Integer createId = HiveUtil.getCurrentUser().getId();
         Project pj = new Project();
-        pj.setStatus(1);
+       // pj.setStatus(1);
         pj.setProjectName(projectVo.getProjectName());
         pj.setCreateId(createId);
         pj.setCreateDate(new Date());
         pj.setUpdateId(createId);
         pj.setUpdateDate(new Date());
-        pj.setDesc(projectVo.getDesc());
+       // pj.setDesc(projectVo.getDesc());
         Project project = projectRepository.save(pj);
         Group group = new Group();
         group.setProjectName(projectVo.getProjectName());

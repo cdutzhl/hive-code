@@ -22,10 +22,10 @@ public class Project extends BaseEntity implements Serializable{
     @Column
     private Integer groupId;
     //当前的项目状态  status：1 启用状态  status：0  删除状态
-    @Column
+    @Column(name = "\"status\"")
     private Integer status;
 
-    @Column
+    @Column(name = "\"desc\"")
     private String desc;
 
 

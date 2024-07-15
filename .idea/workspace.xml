@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="5月30日提交">
-      <change afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/GroupUserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/ProjectVo.java" afterDir="false" />
+    <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="7月14日提交">
+      <change afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/ConfigResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/config/DefaultMySQL57InnoDBDialect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/GroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/config/AuditorConfifg.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/config/AuditorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/repository/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/repository/GroupRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/repository/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IGroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IGroupsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/GroupsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IConfigService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ConfigServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,11 +332,11 @@
       <recent name="D:\workspace\code\hive-code\hiver\src\main\java\cn\scu\imc\hiver\netty\rpc\client" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.scu.imc.hiver.entity" />
+      <recent name="cn.scu.imc.hiver.config" />
       <recent name="cn.scu.imc.hiver.bo" />
+      <recent name="cn.scu.imc.hiver.entity" />
       <recent name="cn.scu.imc.hiver.netty.rpc.remote" />
       <recent name="cn.scu.imc.hiver" />
-      <recent name="cn.scu.imc.hiver.netty.rpc" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.HiverApp">
@@ -364,6 +363,19 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -467,8 +479,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.HiverApp" />
-        <item itemvalue="Spring Boot.UserApp" />
         <item itemvalue="Spring Boot.HiveClientApplication (1)" />
+        <item itemvalue="Spring Boot.UserApp" />
         <item itemvalue="JUnit.RpcNettyClientApplicationTests.contextLoads (1)" />
         <item itemvalue="Application.ServerBusiHandler" />
       </list>
@@ -560,7 +572,8 @@
       <workItem from="1720614615603" duration="1617000" />
       <workItem from="1720703205650" duration="1073000" />
       <workItem from="1720873432603" duration="3831000" />
-      <workItem from="1720925260780" duration="1817000" />
+      <workItem from="1720925260780" duration="9158000" />
+      <workItem from="1721047828364" duration="6431000" />
     </task>
     <task id="LOCAL-00001" summary="客户端模块远程调用命令完成完成">
       <created>1703164986911</created>
@@ -583,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717084231032</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="7月14日提交">
+      <created>1720961897159</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720961897159</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -634,7 +654,8 @@
     <MESSAGE value="客户端模块远程调用命令完成完成" />
     <MESSAGE value="5月23日提交" />
     <MESSAGE value="5月30日提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="5月30日提交" />
+    <MESSAGE value="7月14日提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="7月14日提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -775,7 +796,7 @@
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/config/AuditorConfifg.java</url>
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/config/AuditorConfig.java</url>
           <line>15</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
@@ -788,6 +809,11 @@
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java</url>
           <line>53</line>
           <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ConfigServiceImpl.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class AuditorConfifg implements AuditorAware<Integer> {
+public class AuditorConfig implements AuditorAware<Integer> {
 
     @Override
     public Optional<Integer> getCurrentAuditor() {

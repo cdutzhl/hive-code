@@ -16,7 +16,7 @@ public class Group extends BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column()
+    @Column
     private String projectName;
 
 
