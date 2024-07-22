@@ -20,6 +20,9 @@ public class ClientNode extends BaseEntity implements Serializable{
     private String serverName;
 
     @Column
+    private String code;
+
+    @Column
     private String ip;
 
     @Column

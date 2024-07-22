@@ -1,6 +1,7 @@
 package cn.scu.imc.hiver.service.impl;
 
 
+import cn.scu.imc.hiver.bo.ConfigForm;
 import cn.scu.imc.hiver.bo.ConfigResponse;
 import cn.scu.imc.hiver.entity.Config;
 import cn.scu.imc.hiver.repository.ConfigRepository;
@@ -23,8 +24,24 @@ public class ConfigServiceImpl implements IConfigService {
 
 
     @Override
-    public boolean saveConfig(Config config) {
-        configRepository.save(config);
+    public boolean saveConfig(ConfigForm configForm) {
+        if(configForm.getId() != null) {
+            Config old = configRepository.getOne(configForm.getId());
+            old.setConfigCode(configForm.getConfigCode());
+            old.setConfigValue(configForm.getConfigValue());
+            old.setDescribeMsg(configForm.getDescribeMsg());
+            old.setActive(configForm.getActive());
+            old.setLevel(configForm.getLevel());
+            configRepository.save(old);
+        } else {
+            Config config = new Config();
+            config.setConfigCode(configForm.getConfigCode());
+            config.setConfigValue(configForm.getConfigValue());
+            config.setDescribeMsg(configForm.getDescribeMsg());
+            config.setActive(configForm.getActive());
+            config.setLevel(configForm.getLevel());
+            configRepository.save(config);
+        }
         return true;
     }
 
@@ -71,5 +88,14 @@ public class ConfigServiceImpl implements IConfigService {
                         e.getActive(), e.getLevel())).collect(Collectors.toList());
         configPaging.setData(configResponse);
         return configPaging;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        Config user = findById(id);
+        if (user == null) {
+            throw new RuntimeException(String.format("用户:%d 不存在", id));
+        }
+        configRepository.delete(user);
     }
 }

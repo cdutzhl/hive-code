@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ConfigResponse {
 
-
     private Integer id;
 
     private String configCode;
@@ -28,6 +27,11 @@ public class ConfigResponse {
      */
     private Integer level;
 
-    
+    public String getLevel() {
+        return Integer.valueOf(1).equals(level) ? "系统" : "项目";
+    }
 
+    public String getActive() {
+        return "Y".equals(active) ? "生效" : "不生效";
+    }
 }

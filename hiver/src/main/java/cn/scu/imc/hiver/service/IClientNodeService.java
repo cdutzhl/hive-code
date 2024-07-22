@@ -1,18 +1,19 @@
 package cn.scu.imc.hiver.service;
 
 
+import cn.scu.imc.hiver.bo.ClientNodeForm;
+import cn.scu.imc.hiver.bo.ClientNodeResponse;
 import cn.scu.imc.hiver.entity.ClientNode;
+import cn.scu.imc.hiver.utils.Paging;
 
 import java.util.List;
 
 public interface IClientNodeService {
 
 
-     boolean save(List<ClientNode> clientNodes);
+     boolean save(ClientNodeForm clientNodeForm);
 
      ClientNode findById(Integer id);
-
-     List<ClientNode> listAll();
 
      List<ClientNode> getClientNodeByServer(String serviceName);
 
@@ -22,4 +23,5 @@ public interface IClientNodeService {
 
      void delete(Integer id);
 
+     Paging<ClientNodeResponse> findAll(int pageIndex, int pageSize);
 }

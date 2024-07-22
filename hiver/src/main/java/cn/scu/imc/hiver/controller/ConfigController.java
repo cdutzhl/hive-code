@@ -1,9 +1,12 @@
 package cn.scu.imc.hiver.controller;
 
+import cn.hutool.http.HttpStatus;
+import cn.scu.imc.hiver.bo.ConfigForm;
 import cn.scu.imc.hiver.bo.ConfigResponse;
 import cn.scu.imc.hiver.entity.Config;
 import cn.scu.imc.hiver.service.IConfigService;
 import cn.scu.imc.hiver.utils.Paging;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -26,7 +29,7 @@ public class ConfigController {
 
 
     @PutMapping("/add")
-    public Object add(@RequestBody Config config){
+    public Object add(@RequestBody ConfigForm config){
         return configService.saveConfig(config);
     }
 
@@ -58,6 +61,12 @@ public class ConfigController {
     }
 
 
+
+    @DeleteMapping("/delete/{id}")
+    public Object delete(@PathVariable("id") Integer id){
+        configService.delete(id);
+        return ResponseEntity.status(HttpStatus.HTTP_OK);
+    }
 
 
 
