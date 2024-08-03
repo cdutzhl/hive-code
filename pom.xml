@@ -16,10 +16,8 @@
     </properties>
     <modules>
         <module>security</module>
-        <module>builders</module>
         <module>hiver</module>
         <module>eureka</module>
-        <module>service</module>
         <module>hystrix-dashboard</module>
         <module>turbine</module>
         <module>zuul</module>
@@ -60,11 +58,7 @@
             </dependency>
 
 
-            <dependency>
-                <groupId>cn.scu.imc</groupId>
-                <artifactId>base-api</artifactId>
-                <version>1.0.0</version>
-            </dependency>
+
             <dependency>
                 <groupId>cn.scu.imc</groupId>
                 <artifactId>security</artifactId>
@@ -83,25 +77,25 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <delimiters>
-                        <delimiter>$</delimiter>
-                    </delimiters>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                </configuration>
-            </plugin>
-        </plugins>
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <delimiters>-->
+<!--                        <delimiter>$</delimiter>-->
+<!--                    </delimiters>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>${jdk.version}</source>-->
+<!--                    <target>${jdk.version}</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
     </build>
 
 </project>

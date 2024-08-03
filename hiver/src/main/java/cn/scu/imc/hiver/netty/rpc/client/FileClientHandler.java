@@ -1,10 +1,10 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.bo.vo.FileUpload;
-import cn.scu.imc.hiver.bo.vo.Message;
-import cn.scu.imc.hiver.bo.vo.MessageHeader;
-import cn.scu.imc.hiver.bo.vo.MessageType;
+import cn.scu.imc.hiver.bo.netty.FileUpload;
+import cn.scu.imc.hiver.bo.netty.Message;
+import cn.scu.imc.hiver.bo.netty.MessageHeader;
+import cn.scu.imc.hiver.bo.netty.MessageType;
 import io.netty.channel.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

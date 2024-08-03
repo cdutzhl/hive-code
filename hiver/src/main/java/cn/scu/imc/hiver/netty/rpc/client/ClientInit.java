@@ -58,6 +58,6 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
         ch.pipeline().addLast("FileClientHandler", fileClientHandler);
 
         /*业务处理*/
-//        ch.pipeline().addLast("ClientBusiHandler", clientBusiHandler);
+        ch.pipeline().addLast("ClientBusiHandler", clientBusiHandler);
     }
 }

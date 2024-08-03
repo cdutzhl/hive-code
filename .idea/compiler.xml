@@ -9,12 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="turbine" />
         <module name="product" />
-        <module name="builders" />
         <module name="security" />
         <module name="sleuth" />
         <module name="miccloud-provider-user" />
         <module name="eureka" />
-        <module name="service" />
         <module name="hystrix-dashboard" />
         <module name="hiver" />
         <module name="zuul" />
@@ -23,10 +21,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="base-api" target="1.8" />
-      <module name="builders" target="1.8" />
-      <module name="codehive" target="1.8" />
+      <module name="builders" target="8" />
+      <module name="codehive" target="1.5" />
       <module name="eureka" target="1.5" />
-      <module name="hiver" target="1.8" />
+      <module name="hiver" target="8" />
       <module name="hystrix-dashboard" target="1.5" />
       <module name="miccloud-provider-user" target="1.8" />
       <module name="mozi" target="1.8" />

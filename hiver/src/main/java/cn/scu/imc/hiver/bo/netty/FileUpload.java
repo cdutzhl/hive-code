@@ -1,4 +1,4 @@
-package cn.scu.imc.hiver.vo.netty;
+package cn.scu.imc.hiver.bo.netty;
 
 import java.io.Serializable;
 import java.util.Arrays;

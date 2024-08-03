@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.netty.rpc.base.kryocodec;
 
 
-import cn.scu.imc.hiver.bo.vo.Message;
+import cn.scu.imc.hiver.bo.netty.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -12,8 +12,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class KryoEncoder  extends MessageToByteEncoder<Message> {
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, Message message,
-                          ByteBuf out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, Message message, ByteBuf out)  {
         KryoSerializer.serialize(message, out);
         ctx.flush();
     }

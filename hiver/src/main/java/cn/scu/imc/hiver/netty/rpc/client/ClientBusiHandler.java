@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.bo.vo.Message;
-import cn.scu.imc.hiver.bo.vo.MessageHeader;
-import cn.scu.imc.hiver.bo.vo.MessageType;
+import cn.scu.imc.hiver.bo.netty.Message;
+import cn.scu.imc.hiver.bo.netty.MessageHeader;
+import cn.scu.imc.hiver.bo.netty.MessageType;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -54,7 +54,7 @@ public class ClientBusiHandler extends SimpleChannelInboundHandler<Message> {
     }
 
     public Object send(Object message) throws InterruptedException {
-        if(ctx.channel()==null||!ctx.channel().isActive()){
+        if(ctx.channel() ==null || !ctx.channel().isActive()){
             throw new IllegalStateException("和服务器还未未建立起有效连接！" +
                     "请稍后再试！！");
         }

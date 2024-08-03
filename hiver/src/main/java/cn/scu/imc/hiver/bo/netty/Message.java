@@ -1,9 +1,11 @@
-package cn.scu.imc.hiver.bo.vo;
+package cn.scu.imc.hiver.bo.netty;
+
+import java.io.Serializable;
 
 /**
  * 类说明：消息实体类
  */
-public class Message {
+public class Message implements Serializable {
 
     private MessageHeader messageHeader;
 

@@ -1,4 +1,4 @@
-package cn.scu.imc.hiver.bo.vo;
+package cn.scu.imc.hiver.bo.netty;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -13,6 +13,8 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/base-api/pom.xml" />
+        <option value="$PROJECT_DIR$/builders/pom.xml" />
+        <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/sso-center/pom.xml" />
       </set>
     </option>
