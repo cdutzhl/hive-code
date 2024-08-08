@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver.netty.remote;
 
 
-import cn.scu.imc.hiver.bo.netty.Command;
+import cn.scu.imc.hiver.netty.vo.Command;
 
 /**
  *

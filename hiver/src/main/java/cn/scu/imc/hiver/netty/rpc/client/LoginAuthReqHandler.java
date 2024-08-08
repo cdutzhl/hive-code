@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.bo.netty.Message;
-import cn.scu.imc.hiver.bo.netty.MessageHeader;
-import cn.scu.imc.hiver.bo.netty.MessageType;
+import cn.scu.imc.hiver.netty.vo.Message;
+import cn.scu.imc.hiver.netty.vo.MessageHeader;
+import cn.scu.imc.hiver.netty.vo.MessageType;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.apache.commons.logging.Log;
@@ -16,13 +16,12 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
 
     private static final Log LOG = LogFactory.getLog(LoginAuthReqHandler.class);
 
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(ChannelHandlerContext ctx) {
         ctx.writeAndFlush(buildLoginReq());
     }
 
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         Message message = (Message) msg;
-
         // 如果是握手应答消息，需要判断是否认证成功
         if (message.getMessageHeader() != null
                 && message.getMessageHeader().getType() == MessageType.LOGIN_RESP

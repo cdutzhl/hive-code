@@ -27,7 +27,7 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
 
 
     @Override
-    protected void initChannel(SocketChannel ch) throws Exception {
+    protected void initChannel(SocketChannel ch) {
         // 添加SSL安装验证
         ch.pipeline().addLast(sslContext.newHandler(ch.alloc()));
         /*剥离接收到的消息的长度字段，拿到实际的消息报文的字节数组*/
@@ -46,7 +46,7 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
         ch.pipeline().addLast("MessageEncoder", new KryoEncoder());
 
         /*超时检测*/
-        ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(100));
+        ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(50));
 
         /*发出登录请求*/
         ch.pipeline().addLast("LoginAuthHandler", new LoginAuthReqHandler());
@@ -55,7 +55,7 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
         ch.pipeline().addLast("HeartBeatHandler", new HeartBeatReqHandler());
 
         /*文件传输*/
-        ch.pipeline().addLast("FileClientHandler", fileClientHandler);
+        //ch.pipeline().addLast("FileClientHandler", fileClientHandler);
 
         /*业务处理*/
         ch.pipeline().addLast("ClientBusiHandler", clientBusiHandler);

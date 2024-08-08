@@ -4,93 +4,24 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="节点管理完成">
-      <change afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/utils/SpringContextUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_scu_imc_base_api_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_java8_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_9_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="剥离builder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/HiveClientApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/config/BeanConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/ServerFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoDecoder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoEncoder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoSerializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/FileServerHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/HeartBeatRespHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/LoginAuthRespHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/ServerBusiHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/ServerInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/serivce/LocalService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/utils/PropertiesUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/BaseEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/ClientNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/ExceptionBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/GroupUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/Groups.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/Pipeline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/Project.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/UserForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/netty/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/netty/FileUpload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/netty/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/netty/MessageHeader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/vo/netty/MessageType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/builders/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/codehive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codehive.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/eureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/eureka.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/vo/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/vo/FileUpload.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/FileUpload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/vo/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/vo/MessageHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/MessageHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/vo/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/FileUpload.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/FileUpload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/MessageHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/MessageHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/netty/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/MessageType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/remote/SendMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/remote/SendMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/base/kryocodec/KryoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientBusiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientBusiHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/FileClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/FileClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/HeartBeatReqHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/HeartBeatReqHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/LoginAuthReqHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/LoginAuthReqHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/test/java/cn/scu/imc/hiver/RpcNettyClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/test/java/cn/scu/imc/hiver/RpcNettyClientApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/security.iml" beforeDir="false" afterPath="$PROJECT_DIR$/security/security.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/conf/FeignClientConf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/consumer/IZuulClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/consumer/factory/ZuulClientFallBackFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/product/IProductClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/product/factory/ProductClientServiceFallBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/user/IUserClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/cn/scu/imc/service/user/factory/UserClientserviceFallBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleuth/sleuth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sleuth/sleuth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbine/turbine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/turbine/turbine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/user.iml" beforeDir="false" afterPath="$PROJECT_DIR$/user/user.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul/zuul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/zuul.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,17 +373,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RpcNettyClientApplicationTests.contextLoads (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hiver" />
       <extension name="coverage">
@@ -672,7 +592,12 @@
       <workItem from="1722517619668" duration="2019000" />
       <workItem from="1722522059981" duration="3797000" />
       <workItem from="1722604237085" duration="1876000" />
-      <workItem from="1722694959557" duration="321000" />
+      <workItem from="1722694959557" duration="5427000" />
+      <workItem from="1722777666664" duration="8195000" />
+      <workItem from="1722864036862" duration="3795000" />
+      <workItem from="1722949317875" duration="6689000" />
+      <workItem from="1723037774219" duration="1817000" />
+      <workItem from="1723118736963" duration="1431000" />
     </task>
     <task id="LOCAL-00001" summary="客户端模块远程调用命令完成完成">
       <created>1703164986911</created>
@@ -716,7 +641,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721661437230</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="剥离builder">
+      <created>1722695683535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722695683535</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -782,7 +714,8 @@
     <MESSAGE value="7月14日提交" />
     <MESSAGE value="7月15日提交" />
     <MESSAGE value="节点管理完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="节点管理完成" />
+    <MESSAGE value="剥离builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="剥离builder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -898,19 +831,9 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientBusiHandler.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/RpcClientFrame.java</url>
           <line>71</line>
           <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientBusiHandler.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/ServerBusiHandler.java</url>
@@ -929,12 +852,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java</url>
-          <line>38</line>
+          <line>37</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java</url>
-          <line>58</line>
+          <line>57</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -943,19 +866,9 @@
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/HeartBeatReqHandler.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/builders/src/main/java/cn/scu/imc/hiver/netty/rpc/base/server/ServerInit.java</url>
           <line>35</line>
           <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/LoginAuthReqHandler.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientBusiHandler.java</url>
@@ -972,6 +885,30 @@
           <line>15</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/FileClientHandler.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/FileClientHandler.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/UserController.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="109" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

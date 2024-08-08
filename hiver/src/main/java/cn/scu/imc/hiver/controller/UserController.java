@@ -4,13 +4,12 @@ package cn.scu.imc.hiver.controller;
 import cn.hutool.http.HttpStatus;
 import cn.scu.imc.hiver.bo.UserRequestForm;
 import cn.scu.imc.hiver.bo.UserResponse;
-import cn.scu.imc.hiver.bo.netty.Command;
 import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.netty.rpc.client.ClientBusiHandler;
 import cn.scu.imc.hiver.netty.rpc.client.FileClientHandler;
+import cn.scu.imc.hiver.netty.vo.Command;
 import cn.scu.imc.hiver.service.IUserService;
 import cn.scu.imc.hiver.utils.Paging;
-import cn.scu.imc.hiver.utils.SpringContextUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -77,8 +76,14 @@ public class UserController {
     }
 
     @GetMapping("/test")
-    public void test1()  {
-        SpringContextUtil.getAllBean();
+    public void test1() throws InterruptedException {
+        long start = System.currentTimeMillis();
+        /*发送邮件*/
+        Command command = new Command();
+        command.setCommands("ping www.baidu.com");
+        clientBusiHandler.send(command);
+        System.out.println("共耗时："+(System.currentTimeMillis()-start)+"ms");
+        Thread.sleep(3000);
     }
 
 

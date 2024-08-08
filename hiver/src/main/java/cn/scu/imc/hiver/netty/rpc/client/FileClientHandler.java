@@ -1,10 +1,10 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.bo.netty.FileUpload;
-import cn.scu.imc.hiver.bo.netty.Message;
-import cn.scu.imc.hiver.bo.netty.MessageHeader;
-import cn.scu.imc.hiver.bo.netty.MessageType;
+import cn.scu.imc.hiver.netty.vo.FileUpload;
+import cn.scu.imc.hiver.netty.vo.Message;
+import cn.scu.imc.hiver.netty.vo.MessageHeader;
+import cn.scu.imc.hiver.netty.vo.MessageType;
 import io.netty.channel.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -41,7 +41,7 @@ public class FileClientHandler extends SimpleChannelInboundHandler<Message> {
 
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Message msg){
+    protected void channelRead0(ChannelHandlerContext ctx,  Message msg){
         LOG.info("Client : " + msg);
         if (msg.getMessageHeader() != null
                 && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_UPLOAD_REQ.value()) {

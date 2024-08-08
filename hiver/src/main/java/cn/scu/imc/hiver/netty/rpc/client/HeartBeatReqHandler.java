@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.bo.netty.Message;
-import cn.scu.imc.hiver.bo.netty.MessageHeader;
-import cn.scu.imc.hiver.bo.netty.MessageType;
+import cn.scu.imc.hiver.netty.vo.Message;
+import cn.scu.imc.hiver.netty.vo.MessageHeader;
+import cn.scu.imc.hiver.netty.vo.MessageType;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
@@ -23,8 +23,7 @@ public class HeartBeatReqHandler extends ChannelInboundHandlerAdapter {
 
     private volatile ScheduledFuture<?> heartBeat;
 
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
-            throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
         Message message = (Message) msg;
         // 握手或者说登录成功，主动发送心跳消息
         if (message.getMessageHeader() != null

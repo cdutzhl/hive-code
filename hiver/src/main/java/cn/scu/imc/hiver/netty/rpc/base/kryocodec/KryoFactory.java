@@ -1,5 +1,6 @@
 package cn.scu.imc.hiver.netty.rpc.base.kryocodec;
 
+import cn.scu.imc.hiver.netty.vo.Message;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.serializers.DefaultSerializers;
 import de.javakaffee.kryoserializers.*;
@@ -57,7 +58,7 @@ public class KryoFactory {
         kryo.register(int[].class);
         kryo.register(float[].class);
         kryo.register(double[].class);
-
+        kryo.register(Message.class);
         return kryo;
     }
 }

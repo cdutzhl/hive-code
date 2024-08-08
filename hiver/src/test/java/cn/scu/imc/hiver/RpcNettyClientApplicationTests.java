@@ -1,7 +1,7 @@
 package cn.scu.imc.hiver;
 
 
-import cn.scu.imc.hiver.bo.netty.Command;
+import cn.scu.imc.hiver.netty.vo.Command;
 import cn.scu.imc.hiver.netty.rpc.client.ClientBusiHandler;
 import cn.scu.imc.hiver.netty.rpc.client.FileClientHandler;
 import org.junit.jupiter.api.Test;

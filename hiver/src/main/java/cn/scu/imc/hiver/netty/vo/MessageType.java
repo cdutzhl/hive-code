@@ -1,4 +1,4 @@
-package cn.scu.imc.hiver.bo.netty;
+package cn.scu.imc.hiver.netty.vo;
 
 /**
  * 类说明：消息的类型定义

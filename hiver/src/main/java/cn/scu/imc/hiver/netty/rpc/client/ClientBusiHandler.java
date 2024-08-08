@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.bo.netty.Message;
-import cn.scu.imc.hiver.bo.netty.MessageHeader;
-import cn.scu.imc.hiver.bo.netty.MessageType;
+import cn.scu.imc.hiver.netty.vo.Message;
+import cn.scu.imc.hiver.netty.vo.MessageHeader;
+import cn.scu.imc.hiver.netty.vo.MessageType;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

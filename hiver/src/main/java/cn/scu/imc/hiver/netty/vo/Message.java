@@ -1,11 +1,12 @@
-package cn.scu.imc.hiver.bo.netty;
+package cn.scu.imc.hiver.netty.vo;
 
 import java.io.Serializable;
-
 /**
  * 类说明：消息实体类
  */
 public class Message implements Serializable {
+
+    private static final long serialVersionUID = 3128763218762131L;
 
     private MessageHeader messageHeader;
 

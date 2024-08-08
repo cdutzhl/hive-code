@@ -1,12 +1,14 @@
-package cn.scu.imc.hiver.bo.netty;
+package cn.scu.imc.hiver.netty.vo;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * 类说明：消息头
  */
-public final class MessageHeader {
+public final class MessageHeader  implements Serializable {
+
+    private static final long serialVersionUID = 912376183;
 
     private int crcCode = 0xabef0101;
 
@@ -76,6 +78,7 @@ public final class MessageHeader {
     public final void setLastMessage(boolean lastMessage) {
         this.lastMessage = lastMessage;
     }
+
     @Override
     public String toString() {
         return "Header [crcCode=" + crcCode + ", length=" + length
