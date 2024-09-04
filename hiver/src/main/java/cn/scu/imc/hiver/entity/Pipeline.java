@@ -17,10 +17,11 @@ public class Pipeline extends BaseEntity implements Serializable{
     private Integer id;
 
     @Column
-    private String content;
+    private Integer buildId;
 
     @Column
-    private Integer projectId;
+    private String content;
+
 
 
 }

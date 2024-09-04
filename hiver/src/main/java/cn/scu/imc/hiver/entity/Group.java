@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "group")
+@Table(name = "\"group\"")
 @EntityListeners(AuditingEntityListener.class)
 public class Group extends BaseEntity implements Serializable {
 

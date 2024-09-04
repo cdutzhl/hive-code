@@ -26,5 +26,10 @@
       <option name="name" value="Central Repository" />
       <option name="url" value="https://maven.aliyun.com/repository/public" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="jenkins-releases" />
+      <option name="name" value="jenkins-releases" />
+      <option name="url" value="https://repo.jenkins-ci.org/releases/" />
+    </remote-repository>
   </component>
 </project>

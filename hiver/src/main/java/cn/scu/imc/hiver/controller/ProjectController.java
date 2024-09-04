@@ -1,12 +1,15 @@
 package cn.scu.imc.hiver.controller;
 
 
+import cn.scu.imc.hiver.bo.ProjectStatusVo;
 import cn.scu.imc.hiver.bo.ProjectVo;
 import cn.scu.imc.hiver.entity.Project;
 import cn.scu.imc.hiver.service.IProjectService;
+import cn.scu.imc.hiver.utils.Paging;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -52,7 +55,17 @@ public class ProjectController {
         return true;
     }
 
+    @GetMapping(value = "/get/projectStatus")
+    public Paging<ProjectStatusVo> getProjectStatuslist(@RequestParam(value = "pageIndex", defaultValue = "0") int pageIndex,
+                                                        @RequestParam(value = "pageSize", defaultValue = "10") int pageSize){
+        return projectService.getProjectStatuslist(pageIndex,pageSize);
 
+    }
+
+    @PostMapping(value = "/build/projectId/{projectId}")
+    public void build(@PathVariable("projectId")Integer projectId) throws IOException {
+         projectService.build(projectId);
+    }
 
 
 }

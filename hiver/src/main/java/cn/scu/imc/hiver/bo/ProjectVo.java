@@ -13,5 +13,9 @@ public class ProjectVo {
 
     private String desc;
 
+    private String repository;
+
+    private String pipelineScript;
+
     private List<GroupUserVo> groupUsers;
 }

@@ -1,14 +1,13 @@
 package cn.scu.imc.hiver;
 
 
-import cn.scu.imc.hiver.netty.vo.Command;
 import cn.scu.imc.hiver.netty.rpc.client.ClientBusiHandler;
 import cn.scu.imc.hiver.netty.rpc.client.FileClientHandler;
+import cn.scu.imc.hiver.netty.vo.Command;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.File;
 import java.io.IOException;
 
 @SpringBootTest
@@ -33,11 +32,11 @@ class RpcNettyClientApplicationTests {
 
     @Test
     void fileUpload() throws InterruptedException, IOException {
-        long start = System.currentTimeMillis();
-        File file = new File("D:\\workspace\\code\\hive-ci\\hive-ci.zip");
-        fileClientHandler.uploadFile(file, "hive-ci");
-        System.out.println("共耗时："+(System.currentTimeMillis()-start)+"ms");
-        Thread.sleep(3000);
+//        long start = System.currentTimeMillis();
+//        File file = new File("D:\\workspace\\code\\hive-ci\\hive-ci.zip");
+//        fileClientHandler.uploadFile(null, file, "hive-ci");
+//        System.out.println("共耗时："+(System.currentTimeMillis()-start)+"ms");
+//        Thread.sleep(3000);
     }
 
 }

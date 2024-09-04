@@ -14,10 +14,13 @@ import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Component
 public class HiveUtil {
+
+    private static final String STANDARD_DATE  = "yyyy-HH-mm HH:mm:ss";
 
     private static IUserService staticUservice;
 
@@ -63,6 +66,17 @@ public class HiveUtil {
         return false;
 
     }
+
+    public static String formatDate(Date date, String format) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+        return simpleDateFormat.format(date);
+    }
+
+    public static String now() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(STANDARD_DATE);
+        return simpleDateFormat.format(new Date());
+    }
+
 
 
 }

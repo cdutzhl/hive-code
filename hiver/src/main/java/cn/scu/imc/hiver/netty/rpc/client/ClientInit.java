@@ -55,7 +55,7 @@ public class ClientInit extends ChannelInitializer<SocketChannel> {
         ch.pipeline().addLast("HeartBeatHandler", new HeartBeatReqHandler());
 
         /*文件传输*/
-        //ch.pipeline().addLast("FileClientHandler", fileClientHandler);
+        ch.pipeline().addLast("FileClientHandler", fileClientHandler);
 
         /*业务处理*/
         ch.pipeline().addLast("ClientBusiHandler", clientBusiHandler);

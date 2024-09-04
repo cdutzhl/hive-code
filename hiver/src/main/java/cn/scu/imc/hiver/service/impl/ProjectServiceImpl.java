@@ -2,22 +2,28 @@ package cn.scu.imc.hiver.service.impl;
 
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.scu.imc.hiver.bo.ProjectStatusVo;
 import cn.scu.imc.hiver.bo.ProjectVo;
+import cn.scu.imc.hiver.entity.Build;
 import cn.scu.imc.hiver.entity.Group;
 import cn.scu.imc.hiver.entity.GroupUser;
 import cn.scu.imc.hiver.entity.Project;
+import cn.scu.imc.hiver.repository.BuildRepository;
 import cn.scu.imc.hiver.repository.GroupUserRepository;
 import cn.scu.imc.hiver.repository.ProjectRepository;
+import cn.scu.imc.hiver.service.IBuildService;
 import cn.scu.imc.hiver.service.IGroupsService;
 import cn.scu.imc.hiver.service.IProjectService;
 import cn.scu.imc.hiver.utils.HiveUtil;
+import cn.scu.imc.hiver.utils.Paging;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.io.IOException;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,6 +36,10 @@ public class ProjectServiceImpl implements IProjectService {
     private IGroupsService groupsService;
     @Resource
     private GroupUserRepository groupUserRepository;
+    @Resource
+    private BuildRepository buildRepository;
+    @Resource
+    private IBuildService buildService;
 
 
     @Override
@@ -42,11 +52,14 @@ public class ProjectServiceImpl implements IProjectService {
         Project pj = new Project();
        // pj.setStatus(1);
         pj.setProjectName(projectVo.getProjectName());
+        pj.setRepository(projectVo.getRepository());
+        pj.setPipelineScript(projectVo.getPipelineScript());
         pj.setCreateId(createId);
         pj.setCreateDate(new Date());
         pj.setUpdateId(createId);
         pj.setUpdateDate(new Date());
-       // pj.setDesc(projectVo.getDesc());
+        pj.setStatus(1);
+        pj.setDesc(projectVo.getDesc());
         Project project = projectRepository.save(pj);
         Group group = new Group();
         group.setProjectName(projectVo.getProjectName());
@@ -83,11 +96,55 @@ public class ProjectServiceImpl implements IProjectService {
 
     @Override
     public List<Project> findAll() {
-        return projectRepository.findAll();
+        //Iterable<Project> all = projectRepository.findAll();/
+        return null;
     }
 
     @Override
     public List<Project> findUserProject(Integer userId) {
        return null;
     }
+
+    @Override
+    public Paging<ProjectStatusVo> getProjectStatuslist(int page, int size) {
+        PageRequest pageRequest = PageRequest.of(page - 1, size);
+        Page projects = projectRepository.findAll(pageRequest);
+        Paging<ProjectStatusVo> projectPaging = new Paging<>();
+        projectPaging.setTotal(projects.getTotalElements());
+        projectPaging.setPageSize(size);
+        projectPaging.setPageIndex(page);
+        List<Project> projectsList = projects.getContent();
+        List<ProjectStatusVo> projectsResponse = new ArrayList<>();
+        projectsList.stream().forEach(e -> {
+            List<Build> buildHistory = buildRepository.findAllByProjectId(e.getId());
+            Optional<Build> latest = buildHistory.stream().max(Comparator.comparing(Build::getCreateDate));
+
+            ProjectStatusVo projectStatusVo = new ProjectStatusVo();
+            projectStatusVo.setId(e.getId());
+            projectStatusVo.setProjectName(e.getProjectName());
+            if (latest.isPresent()) {
+                projectStatusVo.setDuration(latest.get().getDuration());
+            }
+            Optional<Build> latestSuccess = buildHistory.stream().filter(b -> Integer.valueOf(0).equals(b.getStatus()))
+                    .max(Comparator.comparing(Build::getCreateDate));
+            latestSuccess.ifPresent(p -> projectStatusVo.setLastSuccess(latestSuccess.get().getCreateDate()));
+            Optional<Build> latestFail = buildHistory.stream().filter(b -> Integer.valueOf(1).equals(b.getStatus()))
+                    .max(Comparator.comparing(Build::getCreateDate));
+            latestFail.ifPresent(p -> projectStatusVo.setLastFail(latestFail.get().getCreateDate()));
+            projectsResponse.add(projectStatusVo);
+
+        });
+        projectPaging.setData(projectsResponse);
+        return projectPaging;
+    }
+
+    @Override
+    @Transactional
+    public void build(Integer projectId) throws IOException {
+        Project project = getByProjectId(projectId);
+        buildService.build(project.getId());
+    }
+
+
+
 }
