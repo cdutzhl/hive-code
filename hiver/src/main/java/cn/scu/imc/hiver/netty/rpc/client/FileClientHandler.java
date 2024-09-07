@@ -68,7 +68,7 @@ public class FileClientHandler extends SimpleChannelInboundHandler<Message> {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
         writer.write("【Stage" + stageNo + "】: 执行Stage" + stageNo + "命令 \n");
-        writer.write(BLANK + " 开始向客户端传输文件\n");
+        writer.write(BLANK + BLANK + "【开始向客户端传输文件】\n");
         String fileName = file.getName();
         Random r = new Random();
         long sessionId = r.nextLong()+1;
