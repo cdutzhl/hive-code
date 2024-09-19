@@ -26,11 +26,11 @@ public class Build extends BaseEntity implements Serializable{
     @Column
     private Time duration;
 
-    //当前的项目状态  status：0 成功  status：1  失败
+    //当前的项目状态  status：0 成功  status：1  失败   status: 2  执行中
     @Column(name = "\"status\"")
     private Integer status;
 
-
+    private String logs;
 
 
 }

@@ -1,9 +1,9 @@
 package cn.scu.imc.hiver.netty.rpc.client;
 
 
-import cn.scu.imc.hiver.netty.vo.Message;
-import cn.scu.imc.hiver.netty.vo.MessageHeader;
-import cn.scu.imc.hiver.netty.vo.MessageType;
+import cn.scu.imc.hiver.netty.vo.*;
+import cn.scu.imc.hiver.utils.HiveUtil;
+import cn.scu.imc.hiver.utils.PropertiesUtils;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -11,6 +11,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -25,6 +28,10 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 @ChannelHandler.Sharable
 public class ClientBusiHandler extends SimpleChannelInboundHandler<Message> {
+
+    private final static String FILESEPARATOR = System.getProperty("file.separator");
+    private final static String LOGFILE = "build.log";
+    private final static String BLANK = "        ";
 
     private static final Log LOG = LogFactory.getLog(ClientBusiHandler.class);
     private ChannelHandlerContext ctx;
@@ -42,18 +49,32 @@ public class ClientBusiHandler extends SimpleChannelInboundHandler<Message> {
         if (msg.getMessageHeader() != null
                 && msg.getMessageHeader().getType() == MessageType.SERVICE_RESP.value()) {
             long sessionId = msg.getMessageHeader().getSessionID();
-            Object result = msg.getBody();
-            if (msg.getMessageHeader().isLastMessage()) {
-                BlockingQueue<Object> msgQueue = responseMap.get(sessionId);
-                msgQueue.put(result);
+            CommandResponse commandResponse = (CommandResponse)msg.getBody();
+            String workspace = (String) PropertiesUtils.getValueByKey("hive.hive.workspace");
+            String logDir= workspace + FILESEPARATOR + commandResponse.getProjectName() + FILESEPARATOR + commandResponse.getVersion() + FILESEPARATOR + LOGFILE;
+            File logFile = new File(logDir);
+            // 创建用于写入日志的文件
+            BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
+            if (msg.getMessageHeader().isFirstMessage()) {
+                writer.write("【Stage Name】: " + commandResponse.getStageName() + "\n");
+            } else {
+                writer.write( BLANK + HiveUtil.now() + "  " +commandResponse.getContent());
             }
 
+            if (msg.getMessageHeader().isLastMessage()) {
+                BlockingQueue<Object> msgQueue = responseMap.get(sessionId);
+                msgQueue.put(commandResponse);
+                writer.write( "\n");
+            }
+            // 确保所有数据都写入文件
+            writer.flush();
+            writer.close();
         } else{
             ctx.fireChannelRead(msg);
         }
     }
 
-    public Object send(Object message) throws InterruptedException {
+    public Object send(Command message) throws InterruptedException {
         if(ctx.channel() ==null || !ctx.channel().isActive()){
             throw new IllegalStateException("和服务器还未未建立起有效连接！" +
                     "请稍后再试！！");

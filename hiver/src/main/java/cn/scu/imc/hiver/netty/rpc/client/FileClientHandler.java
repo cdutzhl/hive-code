@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.Random;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 新增文件业务处理Handler类
@@ -26,7 +28,7 @@ public class FileClientHandler extends SimpleChannelInboundHandler<Message> {
 
     private static final Log LOG = LogFactory.getLog(FileClientHandler.class);
 
-//    private final ConcurrentHashMap<Long, BlockingQueue<Object>> responseMap = new ConcurrentHashMap<Long, BlockingQueue<Object>>();
+    private final ConcurrentHashMap<Long, BlockingQueue<Object>> responseMap = new ConcurrentHashMap<Long, BlockingQueue<Object>>();
 
     private ChannelHandlerContext ctx;
 
@@ -41,20 +43,20 @@ public class FileClientHandler extends SimpleChannelInboundHandler<Message> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx,  Message msg) throws InterruptedException {
         LOG.info("Client : " + msg);
-//        if (msg.getMessageHeader() != null
-//                && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_UPLOAD_REQ.value()) {
-//            long sessionId = msg.getMessageHeader().getSessionID();
-//            Object result = msg.getBody();
-//            LOG.info("sessionId: " + sessionId + "===== " + result);
-//        } else if (msg.getMessageHeader() != null
-//                && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_DONE_RESP
-//                .value()) {
-//            long sessionId = msg.getMessageHeader().getSessionID();
-//            BlockingQueue<Object> msgQueue = responseMap.get(msg.getMessageHeader().getSessionID());
-//            LOG.info("END: " + sessionId + "===== " + msgQueue.take());
-//        } else {
-//            ctx.fireChannelRead(msg);
-//        }
+        if (msg.getMessageHeader() != null
+                && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_UPLOAD_REQ.value()) {
+            long sessionId = msg.getMessageHeader().getSessionID();
+            Object result = msg.getBody();
+            LOG.info("sessionId: " + sessionId + "===== " + result);
+        } else if (msg.getMessageHeader() != null
+                && msg.getMessageHeader().getType() == MessageType.SERVICE_FILE_DONE_RESP
+                .value()) {
+            long sessionId = msg.getMessageHeader().getSessionID();
+            BlockingQueue<Object> msgQueue = responseMap.get(msg.getMessageHeader().getSessionID());
+            LOG.info("END: " + sessionId + "===== " + msgQueue.take());
+        } else {
+            ctx.fireChannelRead(msg);
+        }
     }
 
     public void uploadFile( File logFile, File file, String projectName, Integer version, Integer stageNo) throws IOException {
@@ -67,8 +69,8 @@ public class FileClientHandler extends SimpleChannelInboundHandler<Message> {
         }
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
-        writer.write("【Stage" + stageNo + "】: 执行Stage" + stageNo + "命令 \n");
-        writer.write(BLANK + BLANK + "【开始向客户端传输文件】\n");
+        writer.write("【Stage Name】: 向客户端传输源码\n");
+
         String fileName = file.getName();
         Random r = new Random();
         long sessionId = r.nextLong()+1;
@@ -107,7 +109,7 @@ public class FileClientHandler extends SimpleChannelInboundHandler<Message> {
                     future.cause().printStackTrace();
                 }
             });
-            writer.write(BLANK + BLANK + HiveUtil.now() + "    第"+ (i+1) +"块文件传输完成！File: " + fileName );
+            writer.write(BLANK  + HiveUtil.now() + "    第"+ (i+1) +"块文件传输完成！File: " + fileName );
             writer.write(BLANK + HiveUtil.now() + "    文件总块数：【 "+ total +" 】, 剩余块数：【 " +  (total - (i + 1)) +" 】" + "\n");
         }
         randomAccessFile.close();

@@ -20,6 +20,8 @@ public final class MessageHeader  implements Serializable {
 
     private byte priority;// 消息优先级
 
+    private boolean firstMessage = false;//第一个消息
+
     private boolean lastMessage = false;//最后一个消息
 
     private Map<String, Object> attachment = new HashMap<String, Object>(); // 附件
@@ -79,12 +81,26 @@ public final class MessageHeader  implements Serializable {
         this.lastMessage = lastMessage;
     }
 
-    @Override
-    public String toString() {
-        return "Header [crcCode=" + crcCode + ", length=" + length
-                + ", sessionID=" + sessionID + ", type=" + type + ", priority="
-                + priority + ", attachment=" + attachment + "]";
+    public boolean isFirstMessage() {
+        return firstMessage;
     }
 
+    public void setFirstMessage(boolean firstMessage) {
+        this.firstMessage = firstMessage;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageHeader{" +
+                "crcCode=" + crcCode +
+                ", length=" + length +
+                ", sessionID=" + sessionID +
+                ", type=" + type +
+                ", priority=" + priority +
+                ", firstMessage=" + firstMessage +
+                ", lastMessage=" + lastMessage +
+                ", attachment=" + attachment +
+                '}';
+    }
 }
 

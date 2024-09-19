@@ -7,6 +7,7 @@ import cn.scu.imc.hiver.entity.Project;
 import cn.scu.imc.hiver.entity.User;
 import cn.scu.imc.hiver.netty.rpc.client.ClientBusiHandler;
 import cn.scu.imc.hiver.netty.rpc.client.FileClientHandler;
+import cn.scu.imc.hiver.netty.vo.Command;
 import cn.scu.imc.hiver.repository.BuildRepository;
 import cn.scu.imc.hiver.service.IBuildService;
 import cn.scu.imc.hiver.service.IProjectService;
@@ -15,7 +16,6 @@ import cn.scu.imc.hiver.utils.PropertiesUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StopWatch;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -46,14 +46,23 @@ public class BuildServiceImpl implements IBuildService {
     @Resource
     private ClientBusiHandler clientBusiHandler;
 
-
+    @Override
+    public Build createNew(Integer projectId) {
+        List<Build> buildHistory = buildRepository.findAllByProjectId(projectId);
+        Optional<Build> latest = buildHistory.stream().max(Comparator.comparing(Build::getCreateDate));
+        Build build = new Build();
+        build.setProjectId(projectId);
+        build.setVersion(latest.isPresent() ? latest.get().getVersion() : 1);
+        build.setStatus(2);
+        return buildRepository.save(build);
+    }
 
     @Transactional
     public void build(Integer projectId) throws IOException {
         Project project = projectService.getByProjectId(projectId);
-        List<Build> buildHistory = buildRepository.findAllByProjectId(projectId);
-        Optional<Build> latest = buildHistory.stream().max(Comparator.comparing(Build::getCreateDate));
-        Integer version = latest.isPresent() ?  latest.get().getVersion() : 1;
+        Build build = createNew(projectId);
+        Integer version = build.getVersion();
+
         String workspace = (String) PropertiesUtils.getValueByKey("hive.hive.workspace");
         String workDir = workspace + FILESEPARATOR + project.getProjectName() + FILESEPARATOR + version;
         File workspaceDir = new File(workDir);
@@ -75,14 +84,30 @@ public class BuildServiceImpl implements IBuildService {
             JsonNode pipelineNode = rootNode.path("pipeline");
             System.out.println("Agent: " + pipelineNode.path("agent").asText());
 
-            int i = 1;
+            //compressFolder
+            compressedFolder(workDir, project.getProjectName());
+            File sourceDir = new File(workDir + FILESEPARATOR + project.getProjectName());
+            if (sourceDir.exists()) {
+                sourceDir.delete();
+            }
+            fileClientHandler.uploadFile(logFile, new File(workDir + FILESEPARATOR + project.getProjectName() + ZIPFILE),
+                    project.getProjectName(), version, 1);
             // 解析 stages
             JsonNode stagesNode = pipelineNode.path("stages");
+
             for (JsonNode stageNode : stagesNode) {
+                StringBuffer commands = new StringBuffer();
                 System.out.println("Stage Name: " + stageNode.path("name").asText());
-                if (i==1) {
-                    i = i+ 1;
-                    execStageCommand(stageNode, workDir, logFile, project.getProjectName(), version, i);
+                // 解析 steps
+                for (JsonNode stepNode : stageNode.get("steps")) {
+                    System.out.println("  Step Name: " + stepNode.path("name").asText());
+                    System.out.println("  Step Type: " + stepNode.path("type").asText());
+                    if (stepNode.has("command")) {
+                        commands.append(stepNode.path("command").asText() + ";");
+                    }
+                }
+                if (commands.length() > 0) {
+                    clientBusiHandler.send(new Command(project.getProjectName(), version, stageNode.path("name").asText(),commands.toString()));
                 }
 
             }
@@ -91,25 +116,6 @@ public class BuildServiceImpl implements IBuildService {
         }
     }
 
-    private void execStageCommand(JsonNode stepsNode, String workDir, File logFile, String projectName, Integer version,
-                                  Integer stageNo) throws IOException, InterruptedException {
-        //compressFolder
-        compressedFolder(workDir, projectName);
-        File sourceDir = new File(workDir + FILESEPARATOR + projectName);
-        if (sourceDir.exists()) {
-            sourceDir.delete();
-        }
-        fileClientHandler.uploadFile(logFile, new File(workDir + FILESEPARATOR + projectName + ZIPFILE),
-                projectName, version, stageNo);
-        // 解析 steps
-        for (JsonNode stepNode : stepsNode) {
-            System.out.println("  Step Name: " + stepNode.path("name").asText());
-            System.out.println("  Step Type: " + stepNode.path("type").asText());
-            if (stepNode.has("command")) {
-                clientBusiHandler.send(stepNode.path("command").asText());
-            }
-        }
-    }
 
     public static void compressedFolder(String workDir, String projectName) {
         try {
@@ -150,8 +156,6 @@ public class BuildServiceImpl implements IBuildService {
 
 
     private void downLoadRepository(File workDir, File logFile, String branch, String repository) throws IOException {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
         //download repository
         Runtime runtime = Runtime.getRuntime();
         Process process = runtime.exec("git clone -b " + branch + " " + repository, null, workDir);
@@ -159,7 +163,7 @@ public class BuildServiceImpl implements IBuildService {
         BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
         try {
 
-            writer.write("【Stage-0】: 下载源码 \n");
+            writer.write("【Stage Name】: 下载源码 \n");
             writer.write(BLANK + HiveUtil.now() +" clone from: " + repository +  "\n");
             // 读取标准输出
             BufferedReader stdOutput = new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("GBK")));
@@ -182,10 +186,6 @@ public class BuildServiceImpl implements IBuildService {
         }catch (IOException | InterruptedException e) {
             writer.write(BLANK + HiveUtil.now() + " ERROR: " + e.getMessage());
         }finally {
-            stopWatch.stop();
-            writer.write( "【Stage-0】: 执行完成 耗时：" + stopWatch.getTotalTimeSeconds() +"S");
-            writer.write( "\n");
-
             // 确保所有数据都写入文件
             writer.flush();
             writer.close();
