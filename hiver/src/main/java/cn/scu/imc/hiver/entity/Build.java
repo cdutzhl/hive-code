@@ -5,7 +5,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Time;
 
 @Data
 @Entity
@@ -24,13 +23,12 @@ public class Build extends BaseEntity implements Serializable{
     private Integer version;
 
     @Column
-    private Time duration;
+    private Long duration;
 
-    //当前的项目状态  status：0 成功  status：1  失败   status: 2  执行中
+    //当前的项目状态  status：0 成功  status：1  失败
     @Column(name = "\"status\"")
     private Integer status;
 
-    private String logs;
 
 
 }

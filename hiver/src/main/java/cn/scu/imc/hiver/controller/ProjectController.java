@@ -1,9 +1,12 @@
 package cn.scu.imc.hiver.controller;
 
 
+import cn.scu.imc.hiver.annotation.NoLoginAccess;
+import cn.scu.imc.hiver.bo.BuildHistoryVo;
 import cn.scu.imc.hiver.bo.ProjectStatusVo;
 import cn.scu.imc.hiver.bo.ProjectVo;
 import cn.scu.imc.hiver.entity.Project;
+import cn.scu.imc.hiver.service.IBuildService;
 import cn.scu.imc.hiver.service.IProjectService;
 import cn.scu.imc.hiver.utils.Paging;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +23,8 @@ public class ProjectController {
 
     @Resource
     private IProjectService projectService;
+    @Resource
+    private IBuildService buildService;
 
 
     @GetMapping(value = "/get/{id}")
@@ -61,11 +66,23 @@ public class ProjectController {
         return projectService.getProjectStatuslist(pageIndex,pageSize);
 
     }
-
+    @NoLoginAccess
     @PostMapping(value = "/build/projectId/{projectId}")
     public void build(@PathVariable("projectId")Integer projectId) throws IOException {
          projectService.build(projectId);
     }
+
+    @GetMapping(value = "/build/history/projectId/{projectId}")
+    public List<BuildHistoryVo> buildHistory(@PathVariable("projectId")Integer projectId) throws IOException {
+        return buildService.getHistoryBuild(projectId);
+    }
+
+    @GetMapping(value = "/get/logs")
+    public List<String> getLogs(){
+        return projectService.getLogs();
+
+    }
+
 
 
 }

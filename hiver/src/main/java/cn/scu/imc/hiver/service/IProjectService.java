@@ -24,4 +24,6 @@ public interface IProjectService {
      Paging<ProjectStatusVo> getProjectStatuslist(int pageIndex, int pageSize);
 
      void build(Integer projectId) throws IOException;
+
+     List<String> getLogs();
 }

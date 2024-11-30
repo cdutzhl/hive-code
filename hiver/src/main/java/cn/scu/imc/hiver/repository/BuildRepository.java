@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BuildRepository extends PagingAndSortingRepository<Build, Integer> {
 
-    List<Build> findAllByProjectId(Integer projectId);
+    List<Build> findByProjectId(Integer projectId);
 
 }

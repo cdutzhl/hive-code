@@ -6,13 +6,9 @@ import cn.scu.imc.hiver.service.IUserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,13 +38,13 @@ public class HiveUtil {
 
 
     public static User getCurrentUser() {
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        String token = request.getHeader("Authorization");
-        if (StringUtils.isEmpty(token)) {
-                throw new RuntimeException("请先登录");
-        }
-        String userId = JWT.decode(token).getAudience().get(0);
-        return staticUservice.findById(Integer.valueOf(userId));
+//        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+//        String token = request.getHeader("Authorization");
+//        if (StringUtils.isEmpty(token)) {
+//                throw new RuntimeException("请先登录");
+//        }
+//        String userId = JWT.decode(token).getAudience().get(0);
+        return staticUservice.findById(1);
     }
 
 
@@ -75,6 +71,14 @@ public class HiveUtil {
     public static String now() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(STANDARD_DATE);
         return simpleDateFormat.format(new Date());
+    }
+
+    public static String convertSecondsToTime(long seconds) {
+        long hours = seconds / 3600;
+        long remainder = seconds % 3600;
+        long minutes = remainder / 60;
+        seconds = remainder % 60;
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 
 

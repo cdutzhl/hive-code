@@ -10,16 +10,15 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProjectStatusVo {
+public class BuildHistoryVo {
 
-    private Integer id;
 
-    private String projectName;
-
-    private Date lastSuccess;
-
-    private Date lastFail;
+    private String builder;
 
     private String duration;
+
+    private Date startDate;
+
+    private String buildStatus;
 
 }

@@ -2,6 +2,7 @@ package cn.scu.imc.hiver.service.impl;
 
 
 import cn.hutool.core.io.FileUtil;
+import cn.scu.imc.hiver.bo.BuildHistoryVo;
 import cn.scu.imc.hiver.entity.Build;
 import cn.scu.imc.hiver.entity.Project;
 import cn.scu.imc.hiver.entity.User;
@@ -11,11 +12,13 @@ import cn.scu.imc.hiver.netty.vo.Command;
 import cn.scu.imc.hiver.repository.BuildRepository;
 import cn.scu.imc.hiver.service.IBuildService;
 import cn.scu.imc.hiver.service.IProjectService;
+import cn.scu.imc.hiver.service.IUserService;
 import cn.scu.imc.hiver.utils.HiveUtil;
 import cn.scu.imc.hiver.utils.PropertiesUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -25,6 +28,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -45,23 +49,18 @@ public class BuildServiceImpl implements IBuildService {
     private FileClientHandler fileClientHandler;
     @Resource
     private ClientBusiHandler clientBusiHandler;
+    @Resource
+    private IUserService userService;
 
-    @Override
-    public Build createNew(Integer projectId) {
-        List<Build> buildHistory = buildRepository.findAllByProjectId(projectId);
-        Optional<Build> latest = buildHistory.stream().max(Comparator.comparing(Build::getCreateDate));
-        Build build = new Build();
-        build.setProjectId(projectId);
-        build.setVersion(latest.isPresent() ? latest.get().getVersion() : 1);
-        build.setStatus(2);
-        return buildRepository.save(build);
-    }
 
     @Transactional
     public void build(Integer projectId) throws IOException {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
         Project project = projectService.getByProjectId(projectId);
-        Build build = createNew(projectId);
-        Integer version = build.getVersion();
+        List<Build> buildHistory = buildRepository.findByProjectId(projectId);
+        Optional<Build> latest = buildHistory.stream().max(Comparator.comparing(Build::getCreateDate));
+        Integer version = latest.isPresent() ? latest.get().getVersion() : 1;
 
         String workspace = (String) PropertiesUtils.getValueByKey("hive.hive.workspace");
         String workDir = workspace + FILESEPARATOR + project.getProjectName() + FILESEPARATOR + version;
@@ -111,10 +110,18 @@ public class BuildServiceImpl implements IBuildService {
                 }
 
             }
+            stopWatch.stop();
+            Build build = new Build();
+            build.setProjectId(projectId);
+            build.setVersion(version);
+            build.setStatus(0);
+            build.setDuration(Long.valueOf((long)stopWatch.getTotalTimeSeconds()));
+            buildRepository.save(build);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
+
 
 
     public static void compressedFolder(String workDir, String projectName) {
@@ -208,8 +215,13 @@ public class BuildServiceImpl implements IBuildService {
         }
     }
 
-
-
-
-
+    @Override
+    public List<BuildHistoryVo> getHistoryBuild(Integer projectId) {
+        List<Build> build = buildRepository.findByProjectId(projectId);
+         return build.stream().map(item -> {
+            User buildUser = userService.findById(item.getCreateId());
+            return new BuildHistoryVo(buildUser.getUserName(), HiveUtil.convertSecondsToTime(item.getDuration()),
+                    item.getCreateDate(), Integer.valueOf(0).equals(item.getStatus()) ? "成功" : "失败");
+        }).collect(Collectors.toList());
+    }
 }

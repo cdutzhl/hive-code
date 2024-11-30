@@ -22,6 +22,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -116,14 +118,14 @@ public class ProjectServiceImpl implements IProjectService {
         List<Project> projectsList = projects.getContent();
         List<ProjectStatusVo> projectsResponse = new ArrayList<>();
         projectsList.stream().forEach(e -> {
-            List<Build> buildHistory = buildRepository.findAllByProjectId(e.getId());
+            List<Build> buildHistory = buildRepository.findByProjectId(e.getId());
             Optional<Build> latest = buildHistory.stream().max(Comparator.comparing(Build::getCreateDate));
 
             ProjectStatusVo projectStatusVo = new ProjectStatusVo();
             projectStatusVo.setId(e.getId());
             projectStatusVo.setProjectName(e.getProjectName());
             if (latest.isPresent()) {
-                projectStatusVo.setDuration(latest.get().getDuration());
+                projectStatusVo.setDuration(HiveUtil.convertSecondsToTime(latest.get().getDuration()));
             }
             Optional<Build> latestSuccess = buildHistory.stream().filter(b -> Integer.valueOf(0).equals(b.getStatus()))
                     .max(Comparator.comparing(Build::getCreateDate));
@@ -145,6 +147,19 @@ public class ProjectServiceImpl implements IProjectService {
         buildService.build(project.getId());
     }
 
+    @Override
+    public List<String> getLogs() {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("E:\\hive\\workspace\\builder\\1\\build.log"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            lines.add("Error reading file");
+        }
+        return lines;
 
-
+    }
 }
