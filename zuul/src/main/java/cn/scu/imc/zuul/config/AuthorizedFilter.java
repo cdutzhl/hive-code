@@ -29,7 +29,7 @@ public class AuthorizedFilter extends ZuulFilter {
         //获取当前请求的上下文
         RequestContext currentContext = RequestContext.getCurrentContext();
         //授权信息
-        String auth = "admin:cib1234";
+        String auth = "admin:imc1234";
         //将账号和密码进行加密处理
         byte[] encodeAuth = Base64.getEncoder().encode(auth.getBytes(Charset.forName("US-ASCII")));
          String info = "Basic "+ new String(encodeAuth);

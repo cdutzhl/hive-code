@@ -12,6 +12,10 @@ public final class MessageHeader  implements Serializable {
 
     private int crcCode = 0xabef0101;
 
+    private int version ;
+
+    private String requestId;
+
     private int length;// 消息长度
 
     private long sessionID;// 会话ID

@@ -5,19 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="核心功能完成">
-      <change afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/BuildHistoryVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_39.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_extension_2_0_39.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_2_0_39.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20210307.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/ProjectStatusVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/bo/ProjectStatusVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Build.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/entity/Build.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/hiver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/hiver.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/interceptor/JWTInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/interceptor/JWTInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/rpc/client/ClientInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/repository/BuildRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/repository/BuildRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IBuildService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IBuildService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/IProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/BuildServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/BuildServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/service/impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/MessageHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/MessageHeader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/utils/HiveUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/utils/HiveUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/target/classes/mapping/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiver/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hystrix-dashboard/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/src/main/java/cn/scu/imc/security/config/WebSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/cn/scu/imc/security/config/WebSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sleuth/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbine/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/turbine/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbine/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/mapping/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/src/main/java/cn/scu/imc/zuul/config/AuthorizedFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/java/cn/scu/imc/zuul/config/AuthorizedFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/target/classes/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,13 +359,27 @@
       <recent name="cn.scu.imc.hiver.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.HiverApp">
+  <component name="RunManager" selected="Application.AStockRisingInfoFetcher">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="AStockRisingInfoFetcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.scu.imc.hiver.utils.AStockRisingInfoFetcher" />
+      <module name="hiver" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.scu.imc.hiver.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="BuildServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.scu.imc.hiver.service.impl.BuildServiceImpl" />
@@ -356,20 +388,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.scu.imc.hiver.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PipleLineUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.scu.imc.hiver.utils.PipleLineUtils" />
-      <module name="hiver" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.scu.imc.hiver.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -463,8 +481,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.PipleLineUtils" />
       <item itemvalue="Application.BuildServiceImpl" />
+      <item itemvalue="Application.AStockRisingInfoFetcher" />
       <item itemvalue="JUnit.RpcNettyClientApplicationTests.contextLoads (1)" />
       <item itemvalue="JUnit.RpcNettyClientApplicationTests.fileUpload" />
       <item itemvalue="Spring Boot.ClientApp" />
@@ -472,11 +490,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AStockRisingInfoFetcher" />
         <item itemvalue="Spring Boot.HiverApp" />
         <item itemvalue="JUnit.RpcNettyClientApplicationTests.fileUpload" />
         <item itemvalue="JUnit.RpcNettyClientApplicationTests.contextLoads (1)" />
         <item itemvalue="Application.BuildServiceImpl" />
-        <item itemvalue="Application.PipleLineUtils" />
       </list>
     </recent_temporary>
   </component>
@@ -646,7 +664,20 @@
       <workItem from="1731821161566" duration="6000" />
       <workItem from="1731821177370" duration="5442000" />
       <workItem from="1731936048124" duration="3826000" />
-      <workItem from="1732967188373" duration="591000" />
+      <workItem from="1732967188373" duration="755000" />
+      <workItem from="1732969034804" duration="5685000" />
+      <workItem from="1733044786186" duration="594000" />
+      <workItem from="1742733459722" duration="21975000" />
+      <workItem from="1744235155146" duration="1476000" />
+      <workItem from="1747235340261" duration="948000" />
+      <workItem from="1750169232746" duration="4290000" />
+      <workItem from="1751381824174" duration="407000" />
+      <workItem from="1751382532576" duration="1860000" />
+      <workItem from="1751460991480" duration="834000" />
+      <workItem from="1751462131707" duration="6180000" />
+      <workItem from="1751472187908" duration="599000" />
+      <workItem from="1751552341267" duration="1125000" />
+      <workItem from="1768361073438" duration="481000" />
     </task>
     <task id="LOCAL-00001" summary="客户端模块远程调用命令完成完成">
       <created>1703164986911</created>
@@ -725,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726759290646</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="核心功能完成">
+      <created>1732968120760</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732968120760</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1003,13 +1041,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/interceptor/JWTInterceptor.java</url>
-          <line>21</line>
+          <line>32</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/interceptor/JWTInterceptor.java</url>
-          <line>34</line>
+          <line>45</line>
           <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/utils/JbcryptUtil.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="158" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ClassCastException" package="java.lang" />
