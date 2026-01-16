@@ -4,38 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="核心功能完成">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_extension_2_0_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_2_0_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_14_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20210307.xml" afterDir="false" />
+    <list default="true" id="53c6d031-c278-49af-824a-2031abe9d5f3" name="Default" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/hiver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/hiver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/interceptor/JWTInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/interceptor/JWTInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/MessageHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/netty/vo/MessageHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/utils/HiveUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/java/cn/scu/imc/hiver/utils/HiveUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hiver/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/target/classes/mapping/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiver/target/classes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hystrix-dashboard/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/src/main/java/cn/scu/imc/security/config/WebSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/security/src/main/java/cn/scu/imc/security/config/WebSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleuth/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sleuth/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleuth/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbine/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/turbine/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbine/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/target/classes/mapping/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/target/classes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul/src/main/java/cn/scu/imc/zuul/config/AuthorizedFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/java/cn/scu/imc/zuul/config/AuthorizedFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/target/elecontract.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleuth/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/target/elecontract.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,6 +383,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RpcNettyClientApplicationTests.contextLoads (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hiver" />
       <extension name="coverage">
@@ -677,7 +670,7 @@
       <workItem from="1751462131707" duration="6180000" />
       <workItem from="1751472187908" duration="599000" />
       <workItem from="1751552341267" duration="1125000" />
-      <workItem from="1768361073438" duration="481000" />
+      <workItem from="1768361073438" duration="1921000" />
     </task>
     <task id="LOCAL-00001" summary="客户端模块远程调用命令完成完成">
       <created>1703164986911</created>
@@ -763,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1732968120760</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="init">
+      <created>1768361586387</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768361586387</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -834,7 +834,8 @@
     <MESSAGE value="2024-09-04" />
     <MESSAGE value="2024-09-07" />
     <MESSAGE value="核心功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="核心功能完成" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
